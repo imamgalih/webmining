@@ -1,13 +1,6 @@
 # Tentang Notebooks
 
-```{image} ../webmining/image.png
-:alt: fishy
-:class: bg-primary mb-1
-:width: 300px
-:align: center
-
 ```{admonition} Biodata Penulis
-```{list-table}
 * - Nama
   - Imam Galih Setiono
 * - NIM
