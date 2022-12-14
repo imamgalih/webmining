@@ -52,6 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Crawling Data" href="crawling_pta.html" />
     <link rel="prev" title="Data crawling" href="tugas.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -114,21 +115,6 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="markdown.html">
-   Markdown Files
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="notebooks.html">
-   Content with notebooks
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="markdown-notebooks.html">
-   Notebooks with MyST Markdown
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="tugas.html">
    <strong>
     Data crawling
@@ -140,6 +126,16 @@ const thebe_selector_output = ".output, .cell_output"
    <strong>
     UTS WEB MINING
    </strong>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="crawling_pta.html">
+   Crawling Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="crawling_tweet.html">
+   Crawling Tweeter
   </a>
  </li>
 </ul>
@@ -743,383 +739,49 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cloning into &#39;twint&#39;...
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>remote: Enumerating objects: 47, done.
-remote: Counting objects:   2% (1/47)
-remote: Counting objects:   4% (2/47)
-remote: Counting objects:   6% (3/47)
-remote: Counting objects:   8% (4/47)
-remote: Counting objects:  10% (5/47)
-remote: Counting objects:  12% (6/47)
-remote: Counting objects:  14% (7/47)
-remote: Counting objects:  17% (8/47)
-remote: Counting objects:  19% (9/47)
-remote: Counting objects:  21% (10/47)
-remote: Counting objects:  23% (11/47)
-remote: Counting objects:  25% (12/47)
-remote: Counting objects:  27% (13/47)
-remote: Counting objects:  29% (14/47)
-remote: Counting objects:  31% (15/47)
-remote: Counting objects:  34% (16/47)
-remote: Counting objects:  36% (17/47)
-remote: Counting objects:  38% (18/47)
-remote: Counting objects:  40% (19/47)
-remote: Counting objects:  42% (20/47)
-remote: Counting objects:  44% (21/47)
-remote: Counting objects:  46% (22/47)
-remote: Counting objects:  48% (23/47)
-remote: Counting objects:  51% (24/47)
-remote: Counting objects:  53% (25/47)
-remote: Counting objects:  55% (26/47)
-remote: Counting objects:  57% (27/47)
-remote: Counting objects:  59% (28/47)
-remote: Counting objects:  61% (29/47)
-remote: Counting objects:  63% (30/47)
-remote: Counting objects:  65% (31/47)
-remote: Counting objects:  68% (32/47)
-remote: Counting objects:  70% (33/47)
-remote: Counting objects:  72% (34/47)
-remote: Counting objects:  74% (35/47)
-remote: Counting objects:  76% (36/47)
-remote: Counting objects:  78% (37/47)
-remote: Counting objects:  80% (38/47)
-remote: Counting objects:  82% (39/47)
-remote: Counting objects:  85% (40/47)
-remote: Counting objects:  87% (41/47)
-remote: Counting objects:  89% (42/47)
-remote: Counting objects:  91% (43/47)
-remote: Counting objects:  93% (44/47)
-remote: Counting objects:  95% (45/47)
-remote: Counting objects:  97% (46/47)
-remote: Counting objects: 100% (47/47)
-remote: Counting objects: 100% (47/47), done.
-remote: Compressing objects:   2% (1/44)
-remote: Compressing objects:   4% (2/44)
-remote: Compressing objects:   6% (3/44)
-remote: Compressing objects:   9% (4/44)
-remote: Compressing objects:  11% (5/44)
-remote: Compressing objects:  13% (6/44)
-remote: Compressing objects:  15% (7/44)
-remote: Compressing objects:  18% (8/44)
-remote: Compressing objects:  20% (9/44)
-remote: Compressing objects:  22% (10/44)
-remote: Compressing objects:  25% (11/44)
-remote: Compressing objects:  27% (12/44)
-remote: Compressing objects:  29% (13/44)
-remote: Compressing objects:  31% (14/44)
-remote: Compressing objects:  34% (15/44)
-remote: Compressing objects:  36% (16/44)
-remote: Compressing objects:  38% (17/44)
-remote: Compressing objects:  40% (18/44)
-remote: Compressing objects:  43% (19/44)
-remote: Compressing objects:  45% (20/44)
-remote: Compressing objects:  47% (21/44)
-remote: Compressing objects:  50% (22/44)
-remote: Compressing objects:  52% (23/44)
-remote: Compressing objects:  54% (24/44)
-remote: Compressing objects:  56% (25/44)
-remote: Compressing objects:  59% (26/44)
-remote: Compressing objects:  61% (27/44)
-remote: Compressing objects:  63% (28/44)
-remote: Compressing objects:  65% (29/44)
-remote: Compressing objects:  68% (30/44)
-remote: Compressing objects:  70% (31/44)
-remote: Compressing objects:  72% (32/44)
-remote: Compressing objects:  75% (33/44)
-remote: Compressing objects:  77% (34/44)
-remote: Compressing objects:  79% (35/44)
-remote: Compressing objects:  81% (36/44)
-remote: Compressing objects:  84% (37/44)
-remote: Compressing objects:  86% (38/44)
-remote: Compressing objects:  88% (39/44)
-remote: Compressing objects:  90% (40/44)
-remote: Compressing objects:  93% (41/44)
-remote: Compressing objects:  95% (42/44)
-remote: Compressing objects:  97% (43/44)
-remote: Compressing objects: 100% (44/44)
-remote: Compressing objects: 100% (44/44), done.
-remote: Total 47 (delta 3), reused 14 (delta 0), pack-reused 0
-Unpacking objects:   2% (1/47)   
-Unpacking objects:   4% (2/47)   
-Unpacking objects:   6% (3/47)   
-Unpacking objects:   8% (4/47)   
-Unpacking objects:  10% (5/47)   
-Unpacking objects:  12% (6/47)   
-Unpacking objects:  14% (7/47)   
-Unpacking objects:  17% (8/47)   
-Unpacking objects:  19% (9/47)   
-Unpacking objects:  21% (10/47)   
-Unpacking objects:  23% (11/47)   
-Unpacking objects:  25% (12/47)   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Unpacking objects:  27% (13/47)   
-Unpacking objects:  29% (14/47)   
-Unpacking objects:  31% (15/47)   
-Unpacking objects:  34% (16/47)   
-Unpacking objects:  36% (17/47)   
-Unpacking objects:  38% (18/47)   
-Unpacking objects:  40% (19/47)   
-Unpacking objects:  42% (20/47)   
-Unpacking objects:  44% (21/47)   
-Unpacking objects:  46% (22/47)   
-Unpacking objects:  48% (23/47)   
-Unpacking objects:  51% (24/47)   
-Unpacking objects:  53% (25/47)   
-Unpacking objects:  55% (26/47)   
-Unpacking objects:  57% (27/47)   
-Unpacking objects:  59% (28/47)   
-Unpacking objects:  61% (29/47)   
-Unpacking objects:  63% (30/47)   
-Unpacking objects:  65% (31/47)   
-Unpacking objects:  68% (32/47)   
-Unpacking objects:  70% (33/47)   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Unpacking objects:  72% (34/47)   
-Unpacking objects:  74% (35/47)   
-Unpacking objects:  76% (36/47)   
-Unpacking objects:  78% (37/47)   
-Unpacking objects:  80% (38/47)   
-Unpacking objects:  82% (39/47)   
-Unpacking objects:  85% (40/47)   
-Unpacking objects:  87% (41/47)   
-Unpacking objects:  89% (42/47)   
-Unpacking objects:  91% (43/47)   
-Unpacking objects:  93% (44/47)   
-Unpacking objects:  95% (45/47)   
-Unpacking objects:  97% (46/47)   
-Unpacking objects: 100% (47/47)   
-Unpacking objects: 100% (47/47), done.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fatal: destination path &#39;twint&#39; already exists and is not an empty directory.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/content/drive/MyDrive/webmining/twint
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
-Requirement already satisfied: aiohttp in /usr/local/lib/python3.8/dist-packages (from -r requirements.txt (line 1)) (3.8.3)
-Collecting aiodns
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading aiodns-3.0.0-py3-none-any.whl (5.0 kB)
+Requirement already satisfied: aiohttp in /usr/local/lib/python3.8/dist-packages (from -r requirements.txt (line 1)) (3.7.0)
+Requirement already satisfied: aiodns in /usr/local/lib/python3.8/dist-packages (from -r requirements.txt (line 2)) (3.0.0)
 Requirement already satisfied: beautifulsoup4 in /usr/local/lib/python3.8/dist-packages (from -r requirements.txt (line 3)) (4.6.3)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting cchardet
-  Downloading cchardet-2.1.7-cp38-cp38-manylinux2010_x86_64.whl (265 kB)
-?25l
-     |█▎                              | 10 kB 8.7 MB/s eta 0:00:01
-     |██▌                             | 20 kB 4.9 MB/s eta 0:00:01
-     |███▊                            | 30 kB 7.0 MB/s eta 0:00:01
-     |█████                           | 40 kB 4.2 MB/s eta 0:00:01
-     |██████▏                         | 51 kB 4.6 MB/s eta 0:00:01
-     |███████▍                        | 61 kB 5.3 MB/s eta 0:00:01
-     |████████▋                       | 71 kB 5.4 MB/s eta 0:00:01
-     |█████████▉                      | 81 kB 6.0 MB/s eta 0:00:01
-     |███████████                     | 92 kB 6.0 MB/s eta 0:00:01
-     |████████████▎                   | 102 kB 5.2 MB/s eta 0:00:01
-     |█████████████▌                  | 112 kB 5.2 MB/s eta 0:00:01
-     |██████████████▉                 | 122 kB 5.2 MB/s eta 0:00:01
-     |████████████████                | 133 kB 5.2 MB/s eta 0:00:01
-     |█████████████████▎              | 143 kB 5.2 MB/s eta 0:00:01
-     |██████████████████▌             | 153 kB 5.2 MB/s eta 0:00:01
-     |███████████████████▊            | 163 kB 5.2 MB/s eta 0:00:01
-     |█████████████████████           | 174 kB 5.2 MB/s eta 0:00:01
-     |██████████████████████▏         | 184 kB 5.2 MB/s eta 0:00:01
-     |███████████████████████▍        | 194 kB 5.2 MB/s eta 0:00:01
-     |████████████████████████▋       | 204 kB 5.2 MB/s eta 0:00:01
-     |█████████████████████████▉      | 215 kB 5.2 MB/s eta 0:00:01
-     |███████████████████████████     | 225 kB 5.2 MB/s eta 0:00:01
-     |████████████████████████████▍   | 235 kB 5.2 MB/s eta 0:00:01
-     |█████████████████████████████▋  | 245 kB 5.2 MB/s eta 0:00:01
-     |██████████████████████████████▉ | 256 kB 5.2 MB/s eta 0:00:01
-     |████████████████████████████████| 265 kB 5.2 MB/s 
-?25hCollecting dataclasses
-  Downloading dataclasses-0.6-py3-none-any.whl (14 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting elasticsearch
-  Downloading elasticsearch-8.5.3-py3-none-any.whl (385 kB)
-?25l
-     |▉                               | 10 kB 35.7 MB/s eta 0:00:01
-     |█▊                              | 20 kB 44.2 MB/s eta 0:00:01
-     |██▌                             | 30 kB 55.8 MB/s eta 0:00:01
-     |███▍                            | 40 kB 50.3 MB/s eta 0:00:01
-     |████▎                           | 51 kB 54.1 MB/s eta 0:00:01
-     |█████                           | 61 kB 59.1 MB/s eta 0:00:01
-     |██████                          | 71 kB 63.3 MB/s eta 0:00:01
-     |██████▉                         | 81 kB 66.0 MB/s eta 0:00:01
-     |███████▋                        | 92 kB 70.1 MB/s eta 0:00:01
-     |████████▌                       | 102 kB 73.4 MB/s eta 0:00:01
-     |█████████▍                      | 112 kB 73.4 MB/s eta 0:00:01
-     |██████████▏                     | 122 kB 73.4 MB/s eta 0:00:01
-     |███████████                     | 133 kB 73.4 MB/s eta 0:00:01
-     |████████████                    | 143 kB 73.4 MB/s eta 0:00:01
-     |████████████▊                   | 153 kB 73.4 MB/s eta 0:00:01
-     |█████████████▋                  | 163 kB 73.4 MB/s eta 0:00:01
-     |██████████████▌                 | 174 kB 73.4 MB/s eta 0:00:01
-     |███████████████▎                | 184 kB 73.4 MB/s eta 0:00:01
-     |████████████████▏               | 194 kB 73.4 MB/s eta 0:00:01
-     |█████████████████               | 204 kB 73.4 MB/s eta 0:00:01
-     |█████████████████▉              | 215 kB 73.4 MB/s eta 0:00:01
-     |██████████████████▊             | 225 kB 73.4 MB/s eta 0:00:01
-     |███████████████████▋            | 235 kB 73.4 MB/s eta 0:00:01
-     |████████████████████▍           | 245 kB 73.4 MB/s eta 0:00:01
-     |█████████████████████▎          | 256 kB 73.4 MB/s eta 0:00:01
-     |██████████████████████          | 266 kB 73.4 MB/s eta 0:00:01
-     |███████████████████████         | 276 kB 73.4 MB/s eta 0:00:01
-     |███████████████████████▉        | 286 kB 73.4 MB/s eta 0:00:01
-     |████████████████████████▋       | 296 kB 73.4 MB/s eta 0:00:01
-     |█████████████████████████▌      | 307 kB 73.4 MB/s eta 0:00:01
-     |██████████████████████████▍     | 317 kB 73.4 MB/s eta 0:00:01
-     |███████████████████████████▏    | 327 kB 73.4 MB/s eta 0:00:01
-     |████████████████████████████    | 337 kB 73.4 MB/s eta 0:00:01
-     |█████████████████████████████   | 348 kB 73.4 MB/s eta 0:00:01
-     |█████████████████████████████▊  | 358 kB 73.4 MB/s eta 0:00:01
-     |██████████████████████████████▋ | 368 kB 73.4 MB/s eta 0:00:01
-     |███████████████████████████████▌| 378 kB 73.4 MB/s eta 0:00:01
-     |████████████████████████████████| 385 kB 73.4 MB/s 
-?25hRequirement already satisfied: pysocks in /usr/local/lib/python3.8/dist-packages (from -r requirements.txt (line 7)) (1.7.1)
+Requirement already satisfied: cchardet in /usr/local/lib/python3.8/dist-packages (from -r requirements.txt (line 4)) (2.1.7)
+Requirement already satisfied: dataclasses in /usr/local/lib/python3.8/dist-packages (from -r requirements.txt (line 5)) (0.6)
+Requirement already satisfied: elasticsearch in /usr/local/lib/python3.8/dist-packages (from -r requirements.txt (line 6)) (8.5.3)
+Requirement already satisfied: pysocks in /usr/local/lib/python3.8/dist-packages (from -r requirements.txt (line 7)) (1.7.1)
 Requirement already satisfied: pandas&gt;=0.23.0 in /usr/local/lib/python3.8/dist-packages (from -r requirements.txt (line 8)) (1.3.5)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting aiohttp_socks&lt;=0.4.1
-  Downloading aiohttp_socks-0.4.1-py3-none-any.whl (17 kB)
-Collecting schedule
-  Downloading schedule-1.1.0-py2.py3-none-any.whl (10 kB)
+Requirement already satisfied: aiohttp_socks&lt;=0.4.1 in /usr/local/lib/python3.8/dist-packages (from -r requirements.txt (line 9)) (0.4.1)
+Requirement already satisfied: schedule in /usr/local/lib/python3.8/dist-packages (from -r requirements.txt (line 10)) (1.1.0)
 Requirement already satisfied: geopy in /usr/local/lib/python3.8/dist-packages (from -r requirements.txt (line 11)) (1.17.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting fake-useragent
-  Downloading fake_useragent-1.1.1-py3-none-any.whl (50 kB)
-?25l
-     |██████▌                         | 10 kB 22.9 MB/s eta 0:00:01
-     |█████████████                   | 20 kB 29.1 MB/s eta 0:00:01
-     |███████████████████▌            | 30 kB 36.8 MB/s eta 0:00:01
-     |██████████████████████████      | 40 kB 40.5 MB/s eta 0:00:01
-     |████████████████████████████████| 50 kB 5.5 MB/s 
-?25hCollecting googletransx
-  Downloading googletransx-2.4.2.tar.gz (13 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pytz&gt;=2017.3 in /usr/local/lib/python3.8/dist-packages (from pandas&gt;=0.23.0-&gt;-r requirements.txt (line 8)) (2022.6)
+Requirement already satisfied: fake-useragent in /usr/local/lib/python3.8/dist-packages (from -r requirements.txt (line 12)) (1.1.1)
+Requirement already satisfied: googletransx in /usr/local/lib/python3.8/dist-packages (from -r requirements.txt (line 13)) (2.4.2)
+Requirement already satisfied: pytz&gt;=2017.3 in /usr/local/lib/python3.8/dist-packages (from pandas&gt;=0.23.0-&gt;-r requirements.txt (line 8)) (2022.6)
 Requirement already satisfied: numpy&gt;=1.17.3 in /usr/local/lib/python3.8/dist-packages (from pandas&gt;=0.23.0-&gt;-r requirements.txt (line 8)) (1.21.6)
 Requirement already satisfied: python-dateutil&gt;=2.7.3 in /usr/local/lib/python3.8/dist-packages (from pandas&gt;=0.23.0-&gt;-r requirements.txt (line 8)) (2.8.2)
 Requirement already satisfied: attrs&gt;=19.2.0 in /usr/local/lib/python3.8/dist-packages (from aiohttp_socks&lt;=0.4.1-&gt;-r requirements.txt (line 9)) (21.4.0)
-Requirement already satisfied: frozenlist&gt;=1.1.1 in /usr/local/lib/python3.8/dist-packages (from aiohttp-&gt;-r requirements.txt (line 1)) (1.3.3)
-Requirement already satisfied: aiosignal&gt;=1.1.2 in /usr/local/lib/python3.8/dist-packages (from aiohttp-&gt;-r requirements.txt (line 1)) (1.3.1)
-Requirement already satisfied: multidict&lt;7.0,&gt;=4.5 in /usr/local/lib/python3.8/dist-packages (from aiohttp-&gt;-r requirements.txt (line 1)) (6.0.3)
-Requirement already satisfied: async-timeout&lt;5.0,&gt;=4.0.0a3 in /usr/local/lib/python3.8/dist-packages (from aiohttp-&gt;-r requirements.txt (line 1)) (4.0.2)
-Requirement already satisfied: charset-normalizer&lt;3.0,&gt;=2.0 in /usr/local/lib/python3.8/dist-packages (from aiohttp-&gt;-r requirements.txt (line 1)) (2.1.1)
+Requirement already satisfied: chardet&lt;4.0,&gt;=2.0 in /usr/local/lib/python3.8/dist-packages (from aiohttp-&gt;-r requirements.txt (line 1)) (3.0.4)
 Requirement already satisfied: yarl&lt;2.0,&gt;=1.0 in /usr/local/lib/python3.8/dist-packages (from aiohttp-&gt;-r requirements.txt (line 1)) (1.8.2)
+Requirement already satisfied: multidict&lt;7.0,&gt;=4.5 in /usr/local/lib/python3.8/dist-packages (from aiohttp-&gt;-r requirements.txt (line 1)) (6.0.3)
+Requirement already satisfied: async-timeout&lt;4.0,&gt;=3.0 in /usr/local/lib/python3.8/dist-packages (from aiohttp-&gt;-r requirements.txt (line 1)) (3.0.1)
 Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.8/dist-packages (from python-dateutil&gt;=2.7.3-&gt;pandas&gt;=0.23.0-&gt;-r requirements.txt (line 8)) (1.15.0)
 Requirement already satisfied: idna&gt;=2.0 in /usr/local/lib/python3.8/dist-packages (from yarl&lt;2.0,&gt;=1.0-&gt;aiohttp-&gt;-r requirements.txt (line 1)) (2.10)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting pycares&gt;=4.0.0
-  Downloading pycares-4.3.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (288 kB)
-?25l
-     |█▏                              | 10 kB 25.9 MB/s eta 0:00:01
-     |██▎                             | 20 kB 33.8 MB/s eta 0:00:01
-     |███▍                            | 30 kB 42.6 MB/s eta 0:00:01
-     |████▌                           | 40 kB 49.6 MB/s eta 0:00:01
-     |█████▊                          | 51 kB 48.6 MB/s eta 0:00:01
-     |██████▉                         | 61 kB 51.4 MB/s eta 0:00:01
-     |████████                        | 71 kB 52.0 MB/s eta 0:00:01
-     |█████████                       | 81 kB 52.9 MB/s eta 0:00:01
-     |██████████▏                     | 92 kB 48.6 MB/s eta 0:00:01
-     |███████████▍                    | 102 kB 44.2 MB/s eta 0:00:01
-     |████████████▌                   | 112 kB 44.2 MB/s eta 0:00:01
-     |█████████████▋                  | 122 kB 44.2 MB/s eta 0:00:01
-     |██████████████▊                 | 133 kB 44.2 MB/s eta 0:00:01
-     |███████████████▉                | 143 kB 44.2 MB/s eta 0:00:01
-     |█████████████████               | 153 kB 44.2 MB/s eta 0:00:01
-     |██████████████████▏             | 163 kB 44.2 MB/s eta 0:00:01
-     |███████████████████▎            | 174 kB 44.2 MB/s eta 0:00:01
-     |████████████████████▍           | 184 kB 44.2 MB/s eta 0:00:01
-     |█████████████████████▌          | 194 kB 44.2 MB/s eta 0:00:01
-     |██████████████████████▊         | 204 kB 44.2 MB/s eta 0:00:01
-     |███████████████████████▉        | 215 kB 44.2 MB/s eta 0:00:01
-     |█████████████████████████       | 225 kB 44.2 MB/s eta 0:00:01
-     |██████████████████████████      | 235 kB 44.2 MB/s eta 0:00:01
-     |███████████████████████████▏    | 245 kB 44.2 MB/s eta 0:00:01
-     |████████████████████████████▍   | 256 kB 44.2 MB/s eta 0:00:01
-     |█████████████████████████████▌  | 266 kB 44.2 MB/s eta 0:00:01
-     |██████████████████████████████▋ | 276 kB 44.2 MB/s eta 0:00:01
-     |███████████████████████████████▊| 286 kB 44.2 MB/s eta 0:00:01
-     |████████████████████████████████| 288 kB 44.2 MB/s 
-?25hRequirement already satisfied: cffi&gt;=1.5.0 in /usr/local/lib/python3.8/dist-packages (from pycares&gt;=4.0.0-&gt;aiodns-&gt;-r requirements.txt (line 2)) (1.15.1)
+Requirement already satisfied: pycares&gt;=4.0.0 in /usr/local/lib/python3.8/dist-packages (from aiodns-&gt;-r requirements.txt (line 2)) (4.3.0)
+Requirement already satisfied: cffi&gt;=1.5.0 in /usr/local/lib/python3.8/dist-packages (from pycares&gt;=4.0.0-&gt;aiodns-&gt;-r requirements.txt (line 2)) (1.15.1)
 Requirement already satisfied: pycparser in /usr/local/lib/python3.8/dist-packages (from cffi&gt;=1.5.0-&gt;pycares&gt;=4.0.0-&gt;aiodns-&gt;-r requirements.txt (line 2)) (2.21)
+Requirement already satisfied: elastic-transport&lt;9,&gt;=8 in /usr/local/lib/python3.8/dist-packages (from elasticsearch-&gt;-r requirements.txt (line 6)) (8.4.0)
+Requirement already satisfied: certifi in /usr/local/lib/python3.8/dist-packages (from elastic-transport&lt;9,&gt;=8-&gt;elasticsearch-&gt;-r requirements.txt (line 6)) (2022.9.24)
+Requirement already satisfied: urllib3&lt;2,&gt;=1.26.2 in /usr/local/lib/python3.8/dist-packages (from elastic-transport&lt;9,&gt;=8-&gt;elasticsearch-&gt;-r requirements.txt (line 6)) (1.26.13)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting elastic-transport&lt;9,&gt;=8
-  Downloading elastic_transport-8.4.0-py3-none-any.whl (59 kB)
-?25l
-     |█████▌                          | 10 kB 30.0 MB/s eta 0:00:01
-     |███████████                     | 20 kB 28.6 MB/s eta 0:00:01
-     |████████████████▌               | 30 kB 34.8 MB/s eta 0:00:01
-     |██████████████████████          | 40 kB 39.5 MB/s eta 0:00:01
-     |███████████████████████████▌    | 51 kB 42.9 MB/s eta 0:00:01
-     |████████████████████████████████| 59 kB 5.8 MB/s 
-?25hRequirement already satisfied: certifi in /usr/local/lib/python3.8/dist-packages (from elastic-transport&lt;9,&gt;=8-&gt;elasticsearch-&gt;-r requirements.txt (line 6)) (2022.9.24)
-Collecting urllib3&lt;2,&gt;=1.26.2
-  Downloading urllib3-1.26.13-py2.py3-none-any.whl (140 kB)
-?25l
-     |██▎                             | 10 kB 29.5 MB/s eta 0:00:01
-     |████▋                           | 20 kB 36.3 MB/s eta 0:00:01
-     |███████                         | 30 kB 43.4 MB/s eta 0:00:01
-     |█████████▎                      | 40 kB 48.7 MB/s eta 0:00:01
-     |███████████▋                    | 51 kB 51.8 MB/s eta 0:00:01
-     |██████████████                  | 61 kB 55.6 MB/s eta 0:00:01
-     |████████████████▎               | 71 kB 57.7 MB/s eta 0:00:01
-     |██████████████████▋             | 81 kB 58.6 MB/s eta 0:00:01
-     |█████████████████████           | 92 kB 59.7 MB/s eta 0:00:01
-     |███████████████████████▎        | 102 kB 61.1 MB/s eta 0:00:01
-     |█████████████████████████▋      | 112 kB 61.1 MB/s eta 0:00:01
-     |████████████████████████████    | 122 kB 61.1 MB/s eta 0:00:01
-     |██████████████████████████████▎ | 133 kB 61.1 MB/s eta 0:00:01
-     |████████████████████████████████| 140 kB 61.1 MB/s 
-?25hRequirement already satisfied: geographiclib&lt;2,&gt;=1.49 in /usr/local/lib/python3.8/dist-packages (from geopy-&gt;-r requirements.txt (line 11)) (1.52)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: geographiclib&lt;2,&gt;=1.49 in /usr/local/lib/python3.8/dist-packages (from geopy-&gt;-r requirements.txt (line 11)) (1.52)
 Requirement already satisfied: importlib-resources&gt;=5.0 in /usr/local/lib/python3.8/dist-packages (from fake-useragent-&gt;-r requirements.txt (line 12)) (5.10.0)
 Requirement already satisfied: zipp&gt;=3.1.0 in /usr/local/lib/python3.8/dist-packages (from importlib-resources&gt;=5.0-&gt;fake-useragent-&gt;-r requirements.txt (line 12)) (3.11.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: requests in /usr/local/lib/python3.8/dist-packages (from googletransx-&gt;-r requirements.txt (line 13)) (2.23.0)
-Collecting requests
-  Downloading requests-2.28.1-py3-none-any.whl (62 kB)
-?25l
-     |█████▏                          | 10 kB 29.0 MB/s eta 0:00:01
-     |██████████▍                     | 20 kB 36.3 MB/s eta 0:00:01
-     |███████████████▋                | 30 kB 44.0 MB/s eta 0:00:01
-     |████████████████████▉           | 40 kB 47.0 MB/s eta 0:00:01
-     |██████████████████████████      | 51 kB 49.8 MB/s eta 0:00:01
-     |███████████████████████████████▎| 61 kB 53.9 MB/s eta 0:00:01
-     |████████████████████████████████| 62 kB 1.1 MB/s 
-?25hBuilding wheels for collected packages: googletransx
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Building wheel for googletransx (setup.py) ... ?25l?25hdone
-  Created wheel for googletransx: filename=googletransx-2.4.2-py3-none-any.whl size=15968 sha256=356fe472e1924739eca00ebb76a875d9864d66e45dbca89a202abfc214a68f79
-  Stored in directory: /root/.cache/pip/wheels/6a/54/98/96b62f08dd73eca3147e36b5099d77c3f8fedc5472bb488167
-Successfully built googletransx
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: urllib3, requests, pycares, elastic-transport, schedule, googletransx, fake-useragent, elasticsearch, dataclasses, cchardet, aiohttp-socks, aiodns
-  Attempting uninstall: urllib3
-    Found existing installation: urllib3 1.24.3
-    Uninstalling urllib3-1.24.3:
-      Successfully uninstalled urllib3-1.24.3
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Attempting uninstall: requests
-    Found existing installation: requests 2.23.0
-    Uninstalling requests-2.23.0:
-      Successfully uninstalled requests-2.23.0
-<span class=" -Color -Color-Red">ERROR: pip&#39;s dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.</span>
-<span class=" -Color -Color-Red">google-colab 1.0.0 requires tornado~=6.0.4, but you have tornado 6.2 which is incompatible.</span>
-Successfully installed aiodns-3.0.0 aiohttp-socks-0.4.1 cchardet-2.1.7 dataclasses-0.6 elastic-transport-8.4.0 elasticsearch-8.5.3 fake-useragent-1.1.1 googletransx-2.4.2 pycares-4.3.0 requests-2.28.1 schedule-1.1.0 urllib3-1.26.13
+Requirement already satisfied: requests in /usr/local/lib/python3.8/dist-packages (from googletransx-&gt;-r requirements.txt (line 13)) (2.28.1)
+Requirement already satisfied: charset-normalizer&lt;3,&gt;=2 in /usr/local/lib/python3.8/dist-packages (from requests-&gt;googletransx-&gt;-r requirements.txt (line 13)) (2.1.1)
 </pre></div>
 </div>
 </div>
@@ -1145,177 +807,13 @@ Requirement already satisfied: nest-asyncio in /usr/local/lib/python3.8/dist-pac
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting aiohttp==3.7.0
-  Downloading aiohttp-3.7.0-cp38-cp38-manylinux2014_x86_64.whl (1.5 MB)
-?25l
-     |▎                               | 10 kB 28.0 MB/s eta 0:00:01
-     |▌                               | 20 kB 6.1 MB/s eta 0:00:01
-     |▊                               | 30 kB 8.7 MB/s eta 0:00:01
-     |█                               | 40 kB 4.3 MB/s eta 0:00:01
-     |█▏                              | 51 kB 4.6 MB/s eta 0:00:01
-     |█▍                              | 61 kB 5.5 MB/s eta 0:00:01
-     |█▋                              | 71 kB 5.4 MB/s eta 0:00:01
-     |█▉                              | 81 kB 4.1 MB/s eta 0:00:01
-     |██                              | 92 kB 4.6 MB/s eta 0:00:01
-     |██▎                             | 102 kB 4.8 MB/s eta 0:00:01
-     |██▌                             | 112 kB 4.8 MB/s eta 0:00:01
-     |██▊                             | 122 kB 4.8 MB/s eta 0:00:01
-     |███                             | 133 kB 4.8 MB/s eta 0:00:01
-     |███▏                            | 143 kB 4.8 MB/s eta 0:00:01
-     |███▍                            | 153 kB 4.8 MB/s eta 0:00:01
-     |███▋                            | 163 kB 4.8 MB/s eta 0:00:01
-     |███▉                            | 174 kB 4.8 MB/s eta 0:00:01
-     |████                            | 184 kB 4.8 MB/s eta 0:00:01
-     |████▎                           | 194 kB 4.8 MB/s eta 0:00:01
-     |████▌                           | 204 kB 4.8 MB/s eta 0:00:01
-     |████▊                           | 215 kB 4.8 MB/s eta 0:00:01
-     |█████                           | 225 kB 4.8 MB/s eta 0:00:01
-     |█████▏                          | 235 kB 4.8 MB/s eta 0:00:01
-     |█████▍                          | 245 kB 4.8 MB/s eta 0:00:01
-     |█████▋                          | 256 kB 4.8 MB/s eta 0:00:01
-     |█████▉                          | 266 kB 4.8 MB/s eta 0:00:01
-     |██████                          | 276 kB 4.8 MB/s eta 0:00:01
-     |██████▎                         | 286 kB 4.8 MB/s eta 0:00:01
-     |██████▌                         | 296 kB 4.8 MB/s eta 0:00:01
-     |██████▊                         | 307 kB 4.8 MB/s eta 0:00:01
-     |███████                         | 317 kB 4.8 MB/s eta 0:00:01
-     |███████▏                        | 327 kB 4.8 MB/s eta 0:00:01
-     |███████▍                        | 337 kB 4.8 MB/s eta 0:00:01
-     |███████▋                        | 348 kB 4.8 MB/s eta 0:00:01
-     |███████▉                        | 358 kB 4.8 MB/s eta 0:00:01
-     |████████                        | 368 kB 4.8 MB/s eta 0:00:01
-     |████████▎                       | 378 kB 4.8 MB/s eta 0:00:01
-     |████████▌                       | 389 kB 4.8 MB/s eta 0:00:01
-     |████████▊                       | 399 kB 4.8 MB/s eta 0:00:01
-     |█████████                       | 409 kB 4.8 MB/s eta 0:00:01
-     |█████████▏                      | 419 kB 4.8 MB/s eta 0:00:01
-     |█████████▍                      | 430 kB 4.8 MB/s eta 0:00:01
-     |█████████▋                      | 440 kB 4.8 MB/s eta 0:00:01
-     |█████████▉                      | 450 kB 4.8 MB/s eta 0:00:01
-     |██████████                      | 460 kB 4.8 MB/s eta 0:00:01
-     |██████████▎                     | 471 kB 4.8 MB/s eta 0:00:01
-     |██████████▌                     | 481 kB 4.8 MB/s eta 0:00:01
-     |██████████▊                     | 491 kB 4.8 MB/s eta 0:00:01
-     |███████████                     | 501 kB 4.8 MB/s eta 0:00:01
-     |███████████▏                    | 512 kB 4.8 MB/s eta 0:00:01
-     |███████████▍                    | 522 kB 4.8 MB/s eta 0:00:01
-     |███████████▋                    | 532 kB 4.8 MB/s eta 0:00:01
-     |███████████▉                    | 542 kB 4.8 MB/s eta 0:00:01
-     |████████████                    | 552 kB 4.8 MB/s eta 0:00:01
-     |████████████▎                   | 563 kB 4.8 MB/s eta 0:00:01
-     |████████████▌                   | 573 kB 4.8 MB/s eta 0:00:01
-     |████████████▊                   | 583 kB 4.8 MB/s eta 0:00:01
-     |█████████████                   | 593 kB 4.8 MB/s eta 0:00:01
-     |█████████████▏                  | 604 kB 4.8 MB/s eta 0:00:01
-     |█████████████▍                  | 614 kB 4.8 MB/s eta 0:00:01
-     |█████████████▋                  | 624 kB 4.8 MB/s eta 0:00:01
-     |█████████████▉                  | 634 kB 4.8 MB/s eta 0:00:01
-     |██████████████                  | 645 kB 4.8 MB/s eta 0:00:01
-     |██████████████▎                 | 655 kB 4.8 MB/s eta 0:00:01
-     |██████████████▌                 | 665 kB 4.8 MB/s eta 0:00:01
-     |██████████████▊                 | 675 kB 4.8 MB/s eta 0:00:01
-     |███████████████                 | 686 kB 4.8 MB/s eta 0:00:01
-     |███████████████▎                | 696 kB 4.8 MB/s eta 0:00:01
-     |███████████████▌                | 706 kB 4.8 MB/s eta 0:00:01
-     |███████████████▊                | 716 kB 4.8 MB/s eta 0:00:01
-     |████████████████                | 727 kB 4.8 MB/s eta 0:00:01
-     |████████████████▏               | 737 kB 4.8 MB/s eta 0:00:01
-     |████████████████▍               | 747 kB 4.8 MB/s eta 0:00:01
-     |████████████████▋               | 757 kB 4.8 MB/s eta 0:00:01
-     |████████████████▉               | 768 kB 4.8 MB/s eta 0:00:01
-     |█████████████████               | 778 kB 4.8 MB/s eta 0:00:01
-     |█████████████████▎              | 788 kB 4.8 MB/s eta 0:00:01
-     |█████████████████▌              | 798 kB 4.8 MB/s eta 0:00:01
-     |█████████████████▊              | 808 kB 4.8 MB/s eta 0:00:01
-     |██████████████████              | 819 kB 4.8 MB/s eta 0:00:01
-     |██████████████████▏             | 829 kB 4.8 MB/s eta 0:00:01
-     |██████████████████▍             | 839 kB 4.8 MB/s eta 0:00:01
-     |██████████████████▋             | 849 kB 4.8 MB/s eta 0:00:01
-     |██████████████████▉             | 860 kB 4.8 MB/s eta 0:00:01
-     |███████████████████             | 870 kB 4.8 MB/s eta 0:00:01
-     |███████████████████▎            | 880 kB 4.8 MB/s eta 0:00:01
-     |███████████████████▌            | 890 kB 4.8 MB/s eta 0:00:01
-     |███████████████████▊            | 901 kB 4.8 MB/s eta 0:00:01
-     |████████████████████            | 911 kB 4.8 MB/s eta 0:00:01
-     |████████████████████▏           | 921 kB 4.8 MB/s eta 0:00:01
-     |████████████████████▍           | 931 kB 4.8 MB/s eta 0:00:01
-     |████████████████████▋           | 942 kB 4.8 MB/s eta 0:00:01
-     |████████████████████▉           | 952 kB 4.8 MB/s eta 0:00:01
-     |█████████████████████           | 962 kB 4.8 MB/s eta 0:00:01
-     |█████████████████████▎          | 972 kB 4.8 MB/s eta 0:00:01
-     |█████████████████████▌          | 983 kB 4.8 MB/s eta 0:00:01
-     |█████████████████████▊          | 993 kB 4.8 MB/s eta 0:00:01
-     |██████████████████████          | 1.0 MB 4.8 MB/s eta 0:00:01
-     |██████████████████████▏         | 1.0 MB 4.8 MB/s eta 0:00:01
-     |██████████████████████▍         | 1.0 MB 4.8 MB/s eta 0:00:01
-     |██████████████████████▋         | 1.0 MB 4.8 MB/s eta 0:00:01
-     |██████████████████████▉         | 1.0 MB 4.8 MB/s eta 0:00:01
-     |███████████████████████         | 1.1 MB 4.8 MB/s eta 0:00:01
-     |███████████████████████▎        | 1.1 MB 4.8 MB/s eta 0:00:01
-     |███████████████████████▌        | 1.1 MB 4.8 MB/s eta 0:00:01
-     |███████████████████████▊        | 1.1 MB 4.8 MB/s eta 0:00:01
-     |████████████████████████        | 1.1 MB 4.8 MB/s eta 0:00:01
-     |████████████████████████▏       | 1.1 MB 4.8 MB/s eta 0:00:01
-     |████████████████████████▍       | 1.1 MB 4.8 MB/s eta 0:00:01
-     |████████████████████████▋       | 1.1 MB 4.8 MB/s eta 0:00:01
-     |████████████████████████▉       | 1.1 MB 4.8 MB/s eta 0:00:01
-     |█████████████████████████       | 1.1 MB 4.8 MB/s eta 0:00:01
-     |█████████████████████████▎      | 1.2 MB 4.8 MB/s eta 0:00:01
-     |█████████████████████████▌      | 1.2 MB 4.8 MB/s eta 0:00:01
-     |█████████████████████████▊      | 1.2 MB 4.8 MB/s eta 0:00:01
-     |██████████████████████████      | 1.2 MB 4.8 MB/s eta 0:00:01
-     |██████████████████████████▏     | 1.2 MB 4.8 MB/s eta 0:00:01
-     |██████████████████████████▍     | 1.2 MB 4.8 MB/s eta 0:00:01
-     |██████████████████████████▋     | 1.2 MB 4.8 MB/s eta 0:00:01
-     |██████████████████████████▉     | 1.2 MB 4.8 MB/s eta 0:00:01
-     |███████████████████████████     | 1.2 MB 4.8 MB/s eta 0:00:01
-     |███████████████████████████▎    | 1.2 MB 4.8 MB/s eta 0:00:01
-     |███████████████████████████▌    | 1.3 MB 4.8 MB/s eta 0:00:01
-     |███████████████████████████▊    | 1.3 MB 4.8 MB/s eta 0:00:01
-     |████████████████████████████    | 1.3 MB 4.8 MB/s eta 0:00:01
-     |████████████████████████████▏   | 1.3 MB 4.8 MB/s eta 0:00:01
-     |████████████████████████████▍   | 1.3 MB 4.8 MB/s eta 0:00:01
-     |████████████████████████████▋   | 1.3 MB 4.8 MB/s eta 0:00:01
-     |████████████████████████████▉   | 1.3 MB 4.8 MB/s eta 0:00:01
-     |█████████████████████████████   | 1.3 MB 4.8 MB/s eta 0:00:01
-     |█████████████████████████████▎  | 1.3 MB 4.8 MB/s eta 0:00:01
-     |█████████████████████████████▌  | 1.4 MB 4.8 MB/s eta 0:00:01
-     |█████████████████████████████▉  | 1.4 MB 4.8 MB/s eta 0:00:01
-     |██████████████████████████████  | 1.4 MB 4.8 MB/s eta 0:00:01
-     |██████████████████████████████▎ | 1.4 MB 4.8 MB/s eta 0:00:01
-     |██████████████████████████████▌ | 1.4 MB 4.8 MB/s eta 0:00:01
-     |██████████████████████████████▊ | 1.4 MB 4.8 MB/s eta 0:00:01
-     |███████████████████████████████ | 1.4 MB 4.8 MB/s eta 0:00:01
-     |███████████████████████████████▏| 1.4 MB 4.8 MB/s eta 0:00:01
-     |███████████████████████████████▍| 1.4 MB 4.8 MB/s eta 0:00:01
-     |███████████████████████████████▋| 1.4 MB 4.8 MB/s eta 0:00:01
-     |███████████████████████████████▉| 1.5 MB 4.8 MB/s eta 0:00:01
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     |████████████████████████████████| 1.5 MB 4.8 MB/s 
-?25hCollecting async-timeout&lt;4.0,&gt;=3.0
-  Downloading async_timeout-3.0.1-py3-none-any.whl (8.2 kB)
-Requirement already satisfied: chardet&lt;4.0,&gt;=2.0 in /usr/local/lib/python3.8/dist-packages (from aiohttp==3.7.0) (3.0.4)
-Requirement already satisfied: attrs&gt;=17.3.0 in /usr/local/lib/python3.8/dist-packages (from aiohttp==3.7.0) (21.4.0)
-Requirement already satisfied: yarl&lt;2.0,&gt;=1.0 in /usr/local/lib/python3.8/dist-packages (from aiohttp==3.7.0) (1.8.2)
+Requirement already satisfied: aiohttp==3.7.0 in /usr/local/lib/python3.8/dist-packages (3.7.0)
 Requirement already satisfied: multidict&lt;7.0,&gt;=4.5 in /usr/local/lib/python3.8/dist-packages (from aiohttp==3.7.0) (6.0.3)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: idna&gt;=2.0 in /usr/local/lib/python3.8/dist-packages (from yarl&lt;2.0,&gt;=1.0-&gt;aiohttp==3.7.0) (2.10)
-Installing collected packages: async-timeout, aiohttp
-  Attempting uninstall: async-timeout
-    Found existing installation: async-timeout 4.0.2
-    Uninstalling async-timeout-4.0.2:
-      Successfully uninstalled async-timeout-4.0.2
-  Attempting uninstall: aiohttp
-    Found existing installation: aiohttp 3.8.3
-    Uninstalling aiohttp-3.8.3:
-      Successfully uninstalled aiohttp-3.8.3
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed aiohttp-3.7.0 async-timeout-3.0.1
+Requirement already satisfied: attrs&gt;=17.3.0 in /usr/local/lib/python3.8/dist-packages (from aiohttp==3.7.0) (21.4.0)
+Requirement already satisfied: async-timeout&lt;4.0,&gt;=3.0 in /usr/local/lib/python3.8/dist-packages (from aiohttp==3.7.0) (3.0.1)
+Requirement already satisfied: chardet&lt;4.0,&gt;=2.0 in /usr/local/lib/python3.8/dist-packages (from aiohttp==3.7.0) (3.0.4)
+Requirement already satisfied: yarl&lt;2.0,&gt;=1.0 in /usr/local/lib/python3.8/dist-packages (from aiohttp==3.7.0) (1.8.2)
+Requirement already satisfied: idna&gt;=2.0 in /usr/local/lib/python3.8/dist-packages (from yarl&lt;2.0,&gt;=1.0-&gt;aiohttp==3.7.0) (2.10)
 </pre></div>
 </div>
 </div>
@@ -1334,85 +832,92 @@ Installing collected packages: async-timeout, aiohttp
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1602608277199937536 2022-12-13 10:16:02 +0000 &lt;beritajatimcom&gt; Tiga Keluarga Korban Tragedi Kanjuruhan Buat Laporan Baru ke Polres Malang.  Malang ( https://t.co/ksziGGp1k3) – Keluarga korban Tragedi Kanjuruhan terus mencari keadilan. Tiga keluarga…  https://t.co/DJZ5Z256dY #Peristiwa #KeluargaKorbanTragediKanjuruhan via @beritajatimcom
-1602607165587722240 2022-12-13 10:11:37 +0000 &lt;obrolantentang&gt; Jangankan minta maaf sekelas broadcaster  yg bikin tayangan malam hari Liga 1 sebagai sebab sampai terjadi tragedi Kanjuruhan.  Pemimpin media Mojok aja yang masih level bawah, belum juga minta maaf soal arogansinya moto2 tempat makan.
-1602599439830777856 2022-12-13 09:40:55 +0000 &lt;OyikPanca&gt; apa kabar kasus tragedi kanjuruhan iki bos ???
-1602594114230710273 2022-12-13 09:19:46 +0000 &lt;AfriliantoFitri&gt; Happy 1.3.1.2 Day  Kapan institusi keamanan ini tidak mengancam rasa aman masyarakat lagi? 135 nyawa tragedi kanjuruhan dianggap hanya sebagai kejadian saja sampai sekarang #UsutTuntas #UsutTuntasTragediKanjuruhan masih jauh dr titik terang  Semoga para perusak segera dpt balasan
-1602591585673400322 2022-12-13 09:09:43 +0000 &lt;Alvian_22&gt; @SiaranBolaLive Undur diri setelah Tragedi Kanjuruhan ❓❓❓❓❓❓  #UsutTuntas
-1602590001446912000 2022-12-13 09:03:25 +0000 &lt;matamata_com&gt; 6 Duka Mendalam di Tahun 2022, Meninggalnya Eril Anak Ridwan Kamil hingga Tragedi Kanjuruhan  https://t.co/MOpAZUfZXJ
-1602587639714287618 2022-12-13 08:54:02 +0000 &lt;IDNTimesJatim&gt; 3 Keluarga Korban Tragedi Kanjuruhan Datangi Polres Malang  https://t.co/vITNPxgfMa
-1602585600825200641 2022-12-13 08:45:56 +0000 &lt;KlikTimes&gt; Dikawal Aremania Menggugat, Tiga Keluarga Korban Tragedi Kanjuruhan Buat Laporan Baru  https://t.co/BDM5xK15t2
-1602582861336674304 2022-12-13 08:35:03 +0000 &lt;AditiyaYudiPut2&gt; @AREMA1986Merch @kaesangp Sek dilakoni kaesang dinggo tragedi kanjuruhan wes akeh vot Kongres luar biasa. Iku wes bentuk upoyo gae sepakbola sek apik. Arema selaku sek kenek tragedi opo lelakonne. Gur meneng melok pak e IB
-1602578529123979265 2022-12-13 08:17:50 +0000 &lt;detik_jatim&gt; Penyidik Ditreskrimum Polda Jatim kembali menyerahkan berkas perkara Tragedi Kanjuruhan, Malang ke kejaksaan Tinggi Jawa Timur. Pengembalian ini adalah yang kali kedua dari penyidik kepolisian.   https://t.co/KYTrvGzjkr
-1602571509100212224 2022-12-13 07:49:56 +0000 &lt;0292crew&gt; @AremafcOfficial gimana pergerakan dan perkembangan soal tragedi kanjuruhan ?? sudah sampai mana ?? akankah terlelap begitu saja di makan oleh waktu ?? 100 nyawa lebih loh ??
-1602569536125169668 2022-12-13 07:42:06 +0000 &lt;gibranleklok&gt; 40 HARI PASCA TRAGEDI KANJURUHAN, AHY AJAK RAKYAT KAWAL INVESTIGASI SAMPAI TUNTAS ❗ #AHYPimpinPerubahan
-1602569003935076352 2022-12-13 07:39:59 +0000 &lt;iyasiapatau&gt; 🙏🏻🙏🏻🙏🏻 khususon Almarhum/mah tragedy GBLA-Kanjuruhan (bonek-jak fans-bototoh) Alfatehah 🤲🏻  #UsutTuntas 💔🥀 #UsutTuntasTragediKanjuruhan
-1602567385923231745 2022-12-13 07:33:33 +0000 &lt;iyasiapatau&gt; 🙏🏻🙏🏻🙏🏻 khususon Almarhum/mah tragedy GBLA-Kanjuruhan (bonek-jak fans-bototoh) Alfatehah 🤲🏻  #UsutTuntas 💔🥀 #UsutTuntasTragediKanjuruhan
-1602565871784038401 2022-12-13 07:27:32 +0000 &lt;kompasiana&gt; Yang Tersisa dari Tragedi Kanjuruhan: Pengelolaan Stadion ke Depan  https://t.co/IinNrzHkrO
-1602564165063016449 2022-12-13 07:20:45 +0000 &lt;okkymadasari&gt; Malang, 2 bulan lebih setelah Tragedi Kanjuruhan. Kemarahan dan kesedihan masih terus bergema di setiap sudut kota.  Siapa pun akan turut merasakan, betapa nyawa yang hilang tak tergantikan. Dan usut tuntas adalah jalan keadilan.  https://t.co/72ca4G2Hjf
-1602563424596430848 2022-12-13 07:17:49 +0000 &lt;Evilinside88&gt; @edi_sioon @idextratime Males nonton liga PSSI, semenjak tragedi kanjuruhan. Gua udh muak dgn persepakbolaan nasional. Bahkan nonton timnas pun males.
-1602560034000769024 2022-12-13 07:04:20 +0000 &lt;ishadiputraa&gt; Happy 1312 day! Tragedi Kanjuruhan apa kabar?
-1602554666041999360 2022-12-13 06:43:01 +0000 &lt;OnePintShortMel&gt; Indonesia saw one of the world&#39;s worst football tragedy on Oct 1st. 135 deaths. What happened exactly and what is behind Indonesia&#39;s Football Violence? Catch it on Thurs Dec 15 at 9pm SG/Msia time here  https://t.co/2IfaAVVvlN  #indonesia #football #kanjuruhan  https://t.co/lfbwwAFOdE
-1602554438165491712 2022-12-13 06:42:06 +0000 &lt;gibranleklok&gt; AHY: Tragedi Kanjuruhan Insiden Yang Memilukan, Juga Memalukan #AHYPimpinPerubahan
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1602846794266054656 2022-12-14 02:03:49 +0000 &lt;BungHans_&gt; Lempar-lemparan Berkas Perkara Tragedi Kanjuruhan Malang  https://t.co/z2Op8g1z0W
+1602841503877173250 2022-12-14 01:42:48 +0000 &lt;dwikiprazz&gt; AHY: Tragedi Kanjuruhan Insiden Yang Memilukan, Juga Memalukan
+1602841502455324672 2022-12-14 01:42:48 +0000 &lt;AndromedaTonk13&gt; AHY: Tragedi Kanjuruhan Insiden Yang Memilukan, Juga Memalukan
+1602836598462484480 2022-12-14 01:23:18 +0000 &lt;Myselfishness22&gt; @pandji yakin lah, semakin lama sepakbola indo ditinggal supporternya.. dari paling dalamnya aja udah sakit, udah di tegor tragedi kanjuruhan harusnya jadi lebih tau gimana bola indonesia itu
+1602833952804204544 2022-12-14 01:12:48 +0000 &lt;runetampanpisan&gt; @kh_putra boikot liga indonesia!. tragedi kanjuruhan masih belum tuntas, tapi liga malah dijalankan.
+1602833693176840193 2022-12-14 01:11:46 +0000 &lt;sadcatdead&gt; Gw yang tadinya away sana sini semenjak tragedi kanjuruhan udah males nonton bola lokal  Wong kita dianggep objek kok bukan subjek ngapain ke stadion.
+1602831935105273857 2022-12-14 01:04:47 +0000 &lt;Been4Q59&gt; Menpora Harap Indonesia Tiru Maroko soal Pemain Naturalisasi  Ketinggian...,🙄  Benahi PSSI , Tuntaskan Tragedi Kanjuruhan dulu.  Salam Gas Air Mata  . Wasit Argentina Bayi Ajaib Saudi Arabia Messi Rachel Vennya Mahasiswa Menikah Aguero Licha Gvardiol Alvarez Daesang  https://t.co/vJuWtgOGTs
+1602830099132579840 2022-12-14 00:57:29 +0000 &lt;adeAfid&gt; @kh_putra Tragedi Kanjuruhan sangat berdampak besar, ditambah tak ada niat memperbaiki diri dan cuci tangan dr federasi.
+1602825420180979712 2022-12-14 00:38:53 +0000 &lt;kakarindingan&gt; Laporan dokter untuk para korban tragedi Kanjuruhan juga isinya &quot;tidak ada paparan gas air mata&quot; kok..
+1602823238589255680 2022-12-14 00:30:13 +0000 &lt;piki_ajah&gt; @zenrs Udah ga ntn semenjak tragedi kanjuruhan, secara sistem belum dibenahi di seluruh lini takutnya sepakbola indonesia berdarah lagi 🙏
+1602818604587945984 2022-12-14 00:11:48 +0000 &lt;akbarcadabraa&gt; @zenrs Jadi inget pernah ada petinggi PSSI yg bilang pasca tragedi Kanjuruhan, kalo semua supporter damai gak ada serunya lagi dong kompetisi. Akhirnya wasit diminta bikin keputusan ngawur tiap match, supaya memelihara kecurigaan antar supporter &amp;amp; akhirnya timbul dendam
+1602811904547618816 2022-12-13 23:45:11 +0000 &lt;maspoedj&gt; @democrazymedia Gak sekalian aja di hubungkan sama tragedi kanjuruhan ato sekalian sama banjir di Arab Saudi. Hadeh.... Segitunya bikin berita....
+1602809617788305409 2022-12-13 23:36:06 +0000 &lt;Wahyu_xHunter&gt; @PartisanPSBY ngurus masalah tragedi kanjuruhan aja belom selesai sampai detik ini, ditambah kinerja wasit yang makin kesini makin ancoor..ini malah dengan rasa tidak punya malu masih mungut duit dari sanksi ke para kontestan liga. sangat tidak profesional sekali kalian.. di otaknya hanya duit
+1602805820894289920 2022-12-13 23:21:01 +0000 &lt;TintaMedia1&gt; Seluruh masyarakat mendukung, geng Sambo dihukum Qisos oleh Khilafah, juga siapapun yang terlibat pembunuhan KM 50 dan Tragedi Kanjuruhan. Jangan seperti   Ahmad Khozinudin Pejuang Khilafah 🌟 Taati Allah dan RasulNya 🌟  Syariah Kaffah Solusi Utama 🌟  #IslamSelamatkanNegeri  https://t.co/Vg1wZftj9Y
+1602804775673683969 2022-12-13 23:16:51 +0000 &lt;AREMA1986Merch&gt; Beautiful Malang Dengan Segala Keruwetannya.  -Usut Tuntas Tragedi Kanjuruhan-  https://t.co/XM15zb6xo8
+1602803948972216320 2022-12-13 23:13:34 +0000 &lt;romantalokan&gt; @vantatepozh INI BARU BANGET AKU KEMARIN MUTE DIA WKWKWK.   Bukan karena spam &amp;amp; kenorakannya, tapi gegara dia gk respect sama 133 korban tragedi kanjuruhan malah dibikin guyonan 🤬
+1602797151196975106 2022-12-13 22:46:34 +0000 &lt;bujanganzz&gt; @The_RedsIndo Dari tragedi kanjuruhan aja udah keliahatan yg bobrok yang mana
+1602794509133545473 2022-12-13 22:36:04 +0000 &lt;Heraloebss&gt; Ketinggian , Benahi PSSI , Tuntaskan Tragedi Kanjuruhan dulu , Salam Gas Air Mata
+1602791973990998016 2022-12-13 22:25:59 +0000 &lt;medcom_id&gt; Berita Nasional Populer, Penjelasan Bharada E hingga Update Tragedi Kanjuruhan  https://t.co/noKBFV0RpV
+1602791170370809857 2022-12-13 22:22:48 +0000 &lt;slotbastard&gt; Tragedi kanjuruhan af dipermainkan apalagi cuman beginian
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1602550682191470592 2022-12-13 06:27:11 +0000 &lt;beny_islam&gt; Bener ancen akeh seng menyuarakan kejadian tragedi kajuruhan tapi setelah iku opo tetap awak e dewe Iki gampang di adu domba opo maneh suporter. Ayo berjuang Iki duduk masalah keadilan Kanjuruhan tok Iki gawe kedepan e anak cucu mu cek ga di gawe dulinan keadilan Iki !
-1602537559741329408 2022-12-13 05:35:02 +0000 &lt;WastuPrabowo&gt; @rodrigosantono @DivHumas_Polri @HumasPoldaJatim Fotonya dijadiin gambar kaos #usuttuntas kelihatannya bagus. Foto legend tragedi Kanjuruhan..
-1602533842992377859 2022-12-13 05:20:16 +0000 &lt;yanpanjie&gt; @SiaranBolaLive Undur diri setelah #TRAGEDIKANJURUHAN :Aremania😓
-1602533399016919042 2022-12-13 05:18:30 +0000 &lt;pojokanmalang&gt; Semoga... #utas #usuttuntas #kawalsampaituntas #tragedikanjuruhan #justiceforkanjuruhan  https://t.co/a91zHWjjm9
-1602533274399789056 2022-12-13 05:18:00 +0000 &lt;DakwahPos&gt; Lagu &quot;Kanjuruhan&quot; sebagai Pengingat Tragedi Kanjuruhan  https://t.co/ziobYroWOc  https://t.co/9gpaV0vS0D
-1602524505481498624 2022-12-13 04:43:10 +0000 &lt;Nasiruddin2693&gt; @AREMA1986Merch @kaesangp Cara fikirmu aja yang kebalik, emang setelah tragedi kanjuruhan apa yang lu dapet dari Arema FC?
-1602524255828123648 2022-12-13 04:42:10 +0000 &lt;tugumalang_id&gt; Pembongkaran Pagar Stadion Tak Terkait Kasus Tragedi Kanjuruhan  https://t.co/vSOx4n2aRU
-1602522918462033920 2022-12-13 04:36:51 +0000 &lt;riyantama87&gt; GORO GORO KON KOLEM LIGA. TRAGEDI KANJURUHAN YG MENGORBANKAN 135+ NYAWA DADI BHN LELUCON SAK INDONESIA. JANCOK KON IKU. SAMPEK KPN PUN AYAS GAK BAKAL DUKUNG UMAK KABEH, SAMPEK TRAGEDI KANJURUHAN TERUSUT TUNTAS TANPA TERKECUALI TERMASUK SUPPORTER SENG MODON LAPANGAN!  #USUTTUNTAS
-1602515714148954114 2022-12-13 04:08:14 +0000 &lt;CNNIndonesia&gt; Pingpong Berkas Perkara Tragedi Kanjuruhan Malang  https://t.co/IYf79q6kbn
-1602512318683824129 2022-12-13 03:54:44 +0000 &lt;eksklusif6&gt; Kapolresta Sidoarjo Salurkan Taliasih dan Bantuan Sepeda Untuk Anak Polisi Korban Tragedi Kanjuruhan  https://t.co/tWiVhVpD0O
-1602507954099347456 2022-12-13 03:37:24 +0000 &lt;5454_JI&gt; @bukalepak @AremaPersib @garagarabola_ Semua elemen Suporter pada rusuh tapi hanya di #TRAGEDIKANJURUHAN yang dianggap kesalahan aremania...     udah dapat jatah pisang 🍌 dari sang SANG???  🙉🙈🙊
-1602506228391096320 2022-12-13 03:30:32 +0000 &lt;5454_JI&gt; @kusmaya59835147 @AREMA1986Merch @kaesangp Ok kamu sudah menyalahkan aremania dan termasuk didalamnya para korban #TRAGEDIKANJURUHAN teruss yang polisi menembakkan gas beracun itu apa sudah di hukum?
-1602505642945961984 2022-12-13 03:28:13 +0000 &lt;AremaIDN&gt; Dan Tragedi Kanjuruhan terjadi 😔😭😭😭 Besar harapan, khususnya ayas pribadi, klub ikut membantu mencari keadilan bagi semua korban dan keluarga, yg ternyata tagar Usut Tuntas saja datang belakangan 😥 entah karena terus ditekan, atau sebab lain  Kenyataan berlanjut, hashtag hny
-1602505217555468288 2022-12-13 03:26:31 +0000 &lt;5454_JI&gt; @AREMA1986Merch @kaesangp Nyindir siapa ini @AremafcOfficial ? Walau saat berhenti dulu mendukungmu tapi ada yang nyinyirin #TRAGEDIKANJURUHAN 😥😥😥
-1602504270296645632 2022-12-13 03:22:45 +0000 &lt;saintpooney&gt; apakah tim produksi liga turut aktif  berperan dalam pengungkapan tragedi kanjuruhan?
-1602503991761346560 2022-12-13 03:21:39 +0000 &lt;polresta_sda&gt; Kapolresta Sidoarjo Kombes Pol. Kusumo Wahyu Bintoro berikan bantuan kepada keluarga anggota polri korban tragedi Kanjuruhan.   Semoga keluarga diberi ketabahan dan semoga tragedi serupa tidak terulang kembali.   Sumber - Youtube: Seputar iNews Jatim  #polrestasidoarjo  https://t.co/OAZqOyQlYS
-1602502530591694848 2022-12-13 03:15:51 +0000 &lt;MuhammadMumu113&gt; 2. Seperti yang diketahui, sepakbola Indonesia tengah menjadi sorotan pasca Tragedi di Stadion Kanjuruhan 1 Oktober lalu, tragedi yang merengut 135 suporter tersebut menjadi tragedi ke dua setelah tragedi kemanusiaan di Peru pada tahun 1964 yang merengut 318 orang.
-1602501586693283840 2022-12-13 03:12:05 +0000 &lt;Ryykur&gt; @The_RedsIndo Jauh sebelum tragedi kanjuruhan, saya sudah berhenti nonton liga ini, tapi masih tetap nonton Timnas. Seluruh lapisan dari liga ini kacau, ntah siapa yg bisa menyelamatkan liga ini
-1602501382288084993 2022-12-13 03:11:17 +0000 &lt;abit_1928&gt; Nah.. kejadian tragedi kanjuruhan seharusnya membuka mata suporter bahwa menonton sepakbola liga indonesia memang tidak aman 👀..
-1602498711103627264 2022-12-13 03:00:40 +0000 &lt;Sap_ma_bro&gt; @khyleri Yeah, that part killing 370 people in my country, u can search Kanjuruhan tragedy in Google
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1602787421971746822 2022-12-13 22:07:54 +0000 &lt;ondortfalan&gt; Jeda Tragedi Kanjuruhan dipake buat briefing mafia2 ternyata👏
+1602783473076359168 2022-12-13 21:52:12 +0000 &lt;sirdewangga18&gt; @kh_putra @iIhamzada Sepak Bola turun antusiasnya ya sebab para Pemasang Judi dan Kriminalitas tinggi. Semenjak ramai2 Pengaturan Score di Sepak Bola lalu Tragedi Kanjuruhan, sudah tidak Antusias lagi dengan Sepak Bola. Generasi kedepan akan lebih banyak Hiburan juga lagian.
+1602782231046410240 2022-12-13 21:47:16 +0000 &lt;ur_s1ster&gt; @IDGoonerscom Ane anggap Liga Indonesia selesai bersamaan dengan tragedi Kanjuruhan
+1602781614924189696 2022-12-13 21:44:49 +0000 &lt;Gputrazz&gt; @Brylianaldamaaa Gapernah nonton bola Indo lgi semenjak tragedi kanjuruhan, ya ngapain jg nonton liga busuk paling cacat mending dukung Argentina sattt
+1602777080726720512 2022-12-13 21:26:48 +0000 &lt;MochMaksum11&gt; @bonekcasuals @PSSI Bukan apa apa , jika terus seperti ini bom waktu buat @PSSI , suatu saat akan meledak lagi seperti tragedi kanjuruhan ! .
+1602769421516570625 2022-12-13 20:56:22 +0000 &lt;tiaeq&gt; Kyk ngerti ae koen iku, di usut sek tragedi kanjuruhan sek…
+1602750835657936896 2022-12-13 19:42:31 +0000 &lt;tugumalang_id&gt; Pelapor Dugaan Pembunuhan di Tragedi Kanjuruhan Bertambah 3 Keluarga  https://t.co/Ej26NQGzR4
+1602744594700988416 2022-12-13 19:17:43 +0000 &lt;muhammadtajul&gt; terus kelanjutan tragedi kanjuruhan juga udh sampe mana? usut tuntas cuma sebatas jargon doang apa gua yg kudet ya?
+1602741889358524417 2022-12-13 19:06:58 +0000 &lt;RiyadiLeky&gt; Saya Muak dgn Liga Indonesia. Orang² Bebal melanjutkan kompetisi tanpa mau peduli dengan nasib tragedi kanjuruhan.  Sepak bola indonesia adalah hiburan Bedarah.
+1602718142475952128 2022-12-13 17:32:36 +0000 &lt;Dvikar&gt; @harisramadan Dulu cuma males nonton liga nya. Tapi sejak penanganan tragedi kanjuruhan yg gajelas, kek nya bakal malas sama timnas nya juga
+1602712788392366082 2022-12-13 17:11:20 +0000 &lt;syndassko&gt; @BroadcastBola Selama tragedi Kanjuruhan gak ditangani serius, gak akan berbicara apapun (apalagi nonton) sepakbola Indonesia
+1602705846756315138 2022-12-13 16:43:45 +0000 &lt;tegaradt15&gt; @okkyjune13 @NdreasKurniawan @bukandeng @pandji Lu coba liat statement nya anggota PSSI pas tragedi kanjuruhan kemarin, mereka seolah gamau pemerintah ikut campur dalam rapat rapat KLB
+1602696209461874690 2022-12-13 16:05:27 +0000 &lt;rieljodi&gt; @BroadcastBola @PSSI guoblok @pt_lib guoblok juga @PSSI guoblok lagi @pt_lib lagi lagi guoblok  Jangan heran nanti kalau tragedi seperti kanjuruhan terulang, karna liganya emang anjink
+1602692993781309440 2022-12-13 15:52:40 +0000 &lt;HillSportID&gt; @BroadcastBola Tapi emg bener sih semenjak Liga 1 jalan lagi ratingnya Indosiar udh gk setinggi sblm tragedi Kanjuruhan.  Kalo sblmnya sering masuk 5 besar, skrg rating 10 besar aja udh susah... Mungkin efek Pildun juga ngaruh skrg, entah setelah itu bakal naik lagi atau gitu² aja....
+1602692642088755200 2022-12-13 15:51:17 +0000 &lt;bintang_indra&gt; Onside jadi Offside Offside jadi Onside BLOK!!! 😂  BALBALANMU TAEK TAEKAN! @PSSI  Pasca tragedi kanjuruhan wis ra nonton, tapi ndeleng ngene iki metu ning TL wis garakke emosi tok!  https://t.co/jkqTYKPFwJ
+1602692460349919233 2022-12-13 15:50:33 +0000 &lt;VIVAcoid&gt; Lagi, Polda Jatim Serahkan Berkas Tragedi Kanjuruhan ke Kejaksaan  https://t.co/K2IWzMcmfP
+1602691170089549828 2022-12-13 15:45:26 +0000 &lt;Bagindaa98&gt; @Brylianaldamaaa Sebelum tragedi kanjuruhan, masih enak di tonton liga 1, eh setelah tragedi, malah ga jelas.
+1602690750080229376 2022-12-13 15:43:46 +0000 &lt;ifan_tatayam&gt; Setelah #TRAGEDIKANJURUHAN apakah ada perubahan di Liga 1? Ada. Perubahan jam main.   Apakah ada perubahan kualitas?  Ada. MAKIN TAIKK !!   Wasit2mu ki lo pak @iriawan84 . Itungan e wes dudu human ellol kui, tapi human tolol.
+1602689875219726336 2022-12-13 15:40:17 +0000 &lt;blackguywithluv&gt; @IDGoonerscom Terakhir nonton pas namanya gojek liga 1 bersama bukalapak. Itupun ga semua pertandingan karena 2018 sibuk kuliah kerja. Dah itu ga ngikutin lagi sampe tragedi kanjuruhan buat sadar kalo liga 1 masih berjalan tapi masalah yg di hadapin masih itu” aja
+1602683538863980546 2022-12-13 15:15:06 +0000 &lt;28_Pembangkang&gt; Jangan bilang karena perdija kalah, Nama liga di ganti jadi Liga Rebahan. Semenjak Tragedi Kanjuruhan Sepak bola Indonesia Tak menarik Lagi, Penuh Darah Penuh Air Mata.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1602492324948295680 2022-12-13 02:35:17 +0000 &lt;bang_nooe&gt; @AremafcOfficial Wes kekno ae piala ne nang klub asu iki,mandegno ae liga ne pas jangkep 1/2 musim,mulai musim anyar maneh.Warah en piala ne piala kehormatan gae korban2 tragedi kanjuruhan. Klub kok ra duwe isin blas.
-1602491584796590080 2022-12-13 02:32:21 +0000 &lt;ndrembes&gt; orang yang menganggap kematian tragedi kanjuruhan karena salah aremania sendiri banyak gak sih di internet?
-1602490454511345669 2022-12-13 02:27:51 +0000 &lt;Tandoek_&gt; @mohmahfudmd @TVOne ini meyangkut juga keamanan &amp;amp; kesehatan para petugas  pemilu ga pak? masih ingat kan sama tragedi petugas pemilu tahun 2019? melebihin tragedi Kanjuruhan!!
-1602488870611734528 2022-12-13 02:21:34 +0000 &lt;HepriMr&gt; @detikcom @detik_jatim Klo kalah PASTI ada tragedi kanjuruhan season 2, 3, 4 dst. Haparap maklum 😁
-1602486766186901504 2022-12-13 02:13:12 +0000 &lt;faatihadiy&gt; @idextratime Selama tragedi kanjuruhan ga ada kejelasan, HARAM liat liga indo
-1602485018022105089 2022-12-13 02:06:15 +0000 &lt;BEMFISIPUB&gt; Mengingat besarnya dampak yang dimunculkan dalam tragedi kanjuruhan, Kementerian Kajian dan Aksi Strategis BEM FISIP UB 2022 turut hadir dalam memberikan pencerdasan serta alternatif kebijakan bagi pemangku kepentingan untuk segera menuntaskan tragedi ini.  https://t.co/1NrYaWBBB7  https://t.co/9SyE4EV0SU
-1602482548411895808 2022-12-13 01:56:26 +0000 &lt;pojokanmalang&gt; Kedepan, apapun cobaan, bencana, tragedi dan lain sebagainya yang terjadi di negeri ini saya ucapkan ikut berbela sungkawa.  Tak rapel sekarang, ikut penghuni negeri ini lainya dan cukup untuk mengawal kasus Kanjuruhan saja.   #UsutTuntasKanjuruhan #KawalSampaiTuntas #Aremania
-1602480238436683776 2022-12-13 01:47:16 +0000 &lt;Rifxsyndrome&gt; @AREMA1986Merch @kaesangp Mikiro ndes tim, manajemen, owner mu wes iso selebrasi cengengesan kongono, saiki gur disenggol satir semono koe bales e gowo2 tragedi kanjuruhan. Gublok ra due sisin!
-1602475045246619648 2022-12-13 01:26:37 +0000 &lt;Yasin_tok&gt; @The_RedsIndo Hanya fanatisme kedaerahan.  Sejak tragedi kanjuruhan sy uda ga nonton liga1. Meski Persebaya yg main. Meninggalkan dunia persuporteran. Sepakbola Indonesia sdh diluar nalar.
-1602457513647112193 2022-12-13 00:16:58 +0000 &lt;piki_ajah&gt; @ryweuh @The_RedsIndo Gw semenjak tragedi kanjuruhan udah ga ntn lg, bukan masalah kualitas sepakbola nya. Tp sistem persepakbolaan yg ga ada pembenahannya d semua lini.
-1602449084786188288 2022-12-12 23:43:28 +0000 &lt;suaramerdeka&gt; Liga 3 Nasional Belum Jelas, Liga 3 Jateng 2022 Kembali Bergulir : Berikut Ini Hasil Pertandingannya   https://t.co/Ns6nN3lRPX  #pssi #jateng #kompetisi #sepakbola #liga3 #liga3jateng #liga32022 #kanjuruhan #tragedikanjuruhan #malang #counterpainliga3 #liga2 #liga3nasional  https://t.co/1ffwgawAAM
-1602437895654375424 2022-12-12 22:59:00 +0000 &lt;ripqi_riz&gt; Tragedi kanjuruhan 1 oktober 2022 😞
-1602437612761141248 2022-12-12 22:57:53 +0000 &lt;Setiawan6251ya1&gt; @msaid_didu Inna Lillahi wa Inna Ilaihi Roji&#39;un  Pengen dengar juga update korban tragedi kanjuruhan?
-1602437231498731522 2022-12-12 22:56:22 +0000 &lt;Anfieldbreath&gt; @idextratime sebelum tragedi kanjuruhan diadili seadil2nya emang liga kita SAMPAH karena diurus sama SAMPAH2 dan ajg babi. there I said it
-1602436961683529728 2022-12-12 22:55:18 +0000 &lt;ResiSapujagad&gt; @AREMA1986Merch Gak kaget ayas, lha wong sek awal tragedi Kanjuruhan iki terjadi ae, langsung sekaliber ade armando/c*kr* tv sing mudun nyerang Aremania. Padahal iku sik awal betul terjadi tragedi iki, langsung AA sing mudun   https://t.co/8bemq1oEfE
-1602435891162587136 2022-12-12 22:51:02 +0000 &lt;gootzila&gt; @AremaIDN @kocheeeeeenggg @ngntdddd @kaesangp min numpang tanya, goal tuntutan usut tuntas tragedi kanjuruhan itu apa ajasih?
-1602433080790163456 2022-12-12 22:39:52 +0000 &lt;_binegaru_&gt; @odoterss @fauziectnov @The_RedsIndo Asal bukan orang mencla mencle yang bikin opini gantung syal atau sejenisnya pas tragedi Kanjuruhan sih gpp ya imo
-1602429872416382978 2022-12-12 22:27:07 +0000 &lt;shodiq86&gt; @Bam_banktut @bukanmayoritas @registaco Koq larinya ke situ? Kaya ngga ada narasi lain aja.  Sepakbola Indonesia masih kental Politik dan Kepentingannya, Tragedi yg mendunia seperti Kanjuruhan kemarin saja seolah tidak ada bekas, tidak ada pelajaran yg bisa dipetik.
-1602421144912793600 2022-12-12 21:52:27 +0000 &lt;shantie_chua&gt; @edosiswiyono02 Usut tuntas setelah tragedi Kanjuruhan selesai wkwkwk
-1602393966078398464 2022-12-12 20:04:27 +0000 &lt;Kristiancandr17&gt; @akasia_horde Usut tuntas tragedi Kanjuruhan Malang kota Jawa timur
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1602682969696899072 2022-12-13 15:12:51 +0000 &lt;okkyjune13&gt; @GOAL_ID Pasti slanjutnya dri pihak pssi akan menghukum wasit tsb dan kdepannya tdk akan trjadi lg preeettt.... Lucu kn wasitnya pdhl dri pssi malah hukum wasit sendiri wkwkwkkw... Mpe skrg aja tragedi kanjuruhan, pssi kena amnesia yah wkwkwkw
+1602682930731847686 2022-12-13 15:12:41 +0000 &lt;Emyu_02&gt; @The_RedsIndo Semenjak tragedi kanjuruhan, udah gada gairah buat nntn bola lokal.
+1602682280635506690 2022-12-13 15:10:06 +0000 &lt;juan94192628&gt; Pas liga di stop krn tragedi kanjuruhan jd kangen banget sama Persija krn @Persija_Jkt Krn lagi bagus2nya di klasemen nyodok ke papan atas . eh pas liga dilanjut lagi ngeliat Persija malah begini jd nyesel malah lebih ngarep liga di stop aja .
+1602682145159655424 2022-12-13 15:09:34 +0000 &lt;firdausakhmad_&gt; Masih ada aja orang yang bisa enjoy nonton setelah tragedi kanjuruhan 👎
+1602681652962263040 2022-12-13 15:07:37 +0000 &lt;Yogx17&gt; @Fandom_ID Entah kenapa setelah tragedi kanjuruhan saya jadi tidak minat mengikuti liga indonesia
+1602680725941104641 2022-12-13 15:03:56 +0000 &lt;aardwi15&gt; @Fandom_ID plottwist: ternyata wasit2 jadi begini emang di setting sama oknum biar makin keliatan ancur kan tanggung jg udh ada Tragedi Kanjuruhan jg
+1602680390166118403 2022-12-13 15:02:36 +0000 &lt;dsuhuy&gt; Wes males ndelok bal2an kene.  Tak kiro mari tragedi Kanjuruhan onok perubahan, Lha kok tambah sip😂😂
+1602679939479834624 2022-12-13 15:00:48 +0000 &lt;PandjiHermendra&gt; Club yang dirugikan oleh keputusan wasit, sepertinya yg kemarin terlalu keras bersuara di kejadian tragedi kanjuruhan hahahaha
+1602679694834675712 2022-12-13 14:59:50 +0000 &lt;iniozy&gt; Jujur gue ga respect lg sama liga 1 , semenjak tragedi Kanjuruhan
+1602678434311786497 2022-12-13 14:54:49 +0000 &lt;Maaz43931493&gt; @MannyPacquiao so? you want i crying with tragedy in itaewon?, korean is country rasis you know, tragedy kanjuruhan Indonesia, have 133 PEOPLE die and netizens korea say, &quot;This is a backward country&quot; and many more words demeaning my country,
+1602676974929182721 2022-12-13 14:49:01 +0000 &lt;masarvian&gt; @MafiaWasit Tragedi Kanjuruhan dijadikan alasan berhentinya liga. Sakit.
+1602675603056242688 2022-12-13 14:43:34 +0000 &lt;VIVAcoid&gt; Kejati Jatim Terima Lagi Berkas Kasus Tragedi Kanjuruhan dari Polda  https://t.co/I8R72YLvac  https://t.co/U4YYy5loJM
+1602675088645816320 2022-12-13 14:41:32 +0000 &lt;TintaSantRI22&gt; @PartisanPSBY @AremafcOfficial Kabar anyar tragedi kanjuruhan wes dibusu po rong rek..?
+1602669053071724545 2022-12-13 14:17:33 +0000 &lt;IkhwanW19969833&gt; @idextratime semenjak tragedi kanjuruhan sekarang udah gak tau nonton liga 1 lagi apalagi di barengi sistem yg bobrok
+1602668871374278656 2022-12-13 14:16:49 +0000 &lt;Serucoid1&gt; Tiga Keluarga Korban Tragedi Kanjuruhan Menyusul Melapor ke Polres Malang  https://t.co/4mQwlj4mCe
+1602668059235344393 2022-12-13 14:13:36 +0000 &lt;kosong2satu&gt; Semenjak tragedi kanjuruhan ogut jujur aja agak males bahkan untuk saat ini udah gaada gairahnya nonton bola lokal
+1602667522255654914 2022-12-13 14:11:28 +0000 &lt;Baindra_&gt; @WildanSouza @zenrs Palingan, cmn krn &#39;tayang&#39; di sosmed. Saya pun gitu. Sejak.covid, jd ktinggalan kabar, tp msh pgn ngikutin.  Tp ULTIMATE nya adlh, tragedi kanjuruhan kmrn. Sperti udah g ad alasan nntn bola indonesia lagi.
+1602665676862377984 2022-12-13 14:04:08 +0000 &lt;AlanShearer778&gt; @forzakris Dan selama liga 1 diminati,maka ngak perubahan apapun karena sebapuk apapun bisa menghasilkan cuan...jam tanding malam, stadion ngak layak,stadion kapasitas 20rb dipaksakan 30rb.. semua akan tetap berbondong2 menonton.klimaksnya tragedi Kanjuruhan ...
+1602665178201747456 2022-12-13 14:02:09 +0000 &lt;widii_w&gt; pengalihan isu tragedi kanjuruhan.. supoyo kabeh fokus nak kinerja wasit 😂😂 wes enak&quot; 2 ulan wingi g onok kontroversi wasit saiki malah bendino masalah tok 😂😂😂🤣..
+1602663688200392704 2022-12-13 13:56:13 +0000 &lt;itsme__J&gt; Udah males nonton @Liga1Match lagi semenjak tragedi Kanjuruhan, ditambah sekarang wasitnya gblk semua
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1602389121141350400 2022-12-12 19:45:12 +0000 &lt;ojolastin_&gt; @AREMA1986Merch @kaesangp Aku awalnya ya podo perihatin sama tragedi kanjuruhan, namun setelah melihat klub taek fc mu itu meneng ae, bahkan masih bisa tersenyum dicuitan akun nya ditambah aksi-aksi yg menurut ku udh keluar jalur,, jadi kek gimana gitu ya.  Niatnya usut tuntas kok jadi kusut yg ga tuntas.
-1602372147485122560 2022-12-12 18:37:45 +0000 &lt;Monkyyduckyww__&gt; Crash pake motor bersamaan sama tragedi 01 Oktober Kanjuruhan, Malang. Tapi Alhamdulillah berkat kejadian ini bisa ngelatih diri sendiri jadi lebih sabar lagi, ngajarin cara ngambil tindakan disaat diri sedang emosi, mungkin malam ini jadi malam yang paling capek,
-1602361550353756160 2022-12-12 17:55:38 +0000 &lt;AbilRezha&gt; Msih ada yg menikmati liga indonesia?? Kalau gw sih mulai berkurang gra2 tragedi kanjuruhan+persipura degradasi😭
-1602335925409034240 2022-12-12 16:13:49 +0000 &lt;ThePaperPower&gt; Hadirin yang berbahagia, tanggung jawab moral federasi atas tragedi Kanjuruhan adalah, REVOLUSI !  Download file poster di laman blog:  https://t.co/9HC5OMUDXi __ #PaperPower #StreetPosterArt #StreetArt #UsutTuntas #Arema #Aremania #Aremanita #Malang #Kanjuruhan #Suporter  https://t.co/udjea3Dksv
-1602331415961808896 2022-12-12 15:55:54 +0000 &lt;zendy578&gt; #kanjuruhan #percayapolisi #kanjuruhandamai #polribersamarakyat #polribersamawargamalang #wargamalangpercayapolri #polribersamawarga #tragedikanjuruhan #keluargakorbandamai #polribersamakeluargakorban #kanjuruhan #anarkisuporter #usuttuntashanyakedok #salingmenghargai  https://t.co/nFfmbVmU33
-1602330858685231107 2022-12-12 15:53:41 +0000 &lt;khariss99&gt; #kanjuruhan #percayapolisi #kanjuruhandamai #polribersamarakyat #polribersamawargamalang #wargamalangpercayapolri #polribersamawarga #tragedikanjuruhan #keluargakorbandamai #polribersamakeluargakorban #kanjuruhan #anarkisuporter #usuttuntashanyakedok #salingmenghargai #polri  https://t.co/jfaI9qlNxw
-1602330426449678337 2022-12-12 15:51:58 +0000 &lt;rayiii03&gt; #kanjuruhan #percayapolisi #kanjuruhandamai #polribersamarakyat #polribersamawargamalang #wargamalangpercayapolri #polribersamawarga #tragedikanjuruhan #keluargakorbandamai #polribersamakeluargakorban #kanjuruhan #anarkisuporter #usuttuntashanyakedok #salingmenghargai  https://t.co/xQK0RFyW8e
-1602328493312073728 2022-12-12 15:44:17 +0000 &lt;fitfitly&gt; #kanjuruhan #percayapolisi #kanjuruhandamai #polribersamarakyat #polribersamawargamalang #wargamalangpercayapolri #polribersamawarga #tragedikanjuruhan #keluargakorbandamai #polribersamakeluargakorban #kanjuruhan #anarkisuporter #usuttuntashanyakedok #salingmenghargai  https://t.co/bawU0vHxlj
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1602327632540233730 2022-12-12 15:40:52 +0000 &lt;imachrufaa10&gt; Ini pula yg kurasakan saat terjadi tragedi Kanjuruhan. Rasanya ingin marah, kecewa, tapi ke siapa dan untuk apa?
-[!] No more data! Scraping will stop now.
-found 0 deleted tweets in this search.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1602661372877484033 2022-12-13 13:47:01 +0000 &lt;hilman_RA&gt; Handball nick, offside aneeeeh, gelud diego michels, sekarang ini tiap hari ada lawak wkwk btw ada yg masih serius ngikutin liga? Kirain tragedi kanjuruhan bisa jadi titik bslik
+1602660533429161984 2022-12-13 13:43:41 +0000 &lt;rakyatwakandaaa&gt; @zenrs Sejak tragedi kanjuruhan, udah bodoamat dg sepak bola indonesia.
+1602660144541671424 2022-12-13 13:42:09 +0000 &lt;gibranleklok&gt; Tragedi Kanjuruhan Memilukan Sekaligus Memalukan. Satu Nyawa Sudah Terlalu Banyak #AHYPimpinPerubahan
+1602655032305889282 2022-12-13 13:21:50 +0000 &lt;yaopomane&gt; Sejak tragedi kanjuruhan, males ndelok balbalan, gak bergairah, opomane ndelok cuplikan iki, ealaa pancet ae @PSSI
+1602651608940449792 2022-12-13 13:08:14 +0000 &lt;badbois_&gt; Emg bener leren nonton balbalan indo pilihan paling logis, permasalah udh kompleks ga pernah ada solusi yg konkrit. Ditambah tragedi kanjuruhan yg tidak jelas output nya, ketololonan² tiap pekan di pertonton kan. Tolol @PSSI
+1602651492661579777 2022-12-13 13:07:46 +0000 &lt;kiaaaz_&gt; @Askrlfess Mauuuuuuu tp sejak tragedi Kanjuruhan jd takut
+1602650949985914884 2022-12-13 13:05:36 +0000 &lt;xiaolieSrie&gt; @iIhamzada Nggoleki komenan sing nyalahne aremania mergo tragedi kanjuruhan trs ligane mandeg..
+1602650359956406272 2022-12-13 13:03:16 +0000 &lt;arisumitsushima&gt; @Fandom_ID Ini kok habis tragedi Kanjuruhan wasitnya jadi bego semua ya ... Sejak liga mulai Sampek tadi sore kok sama aja ... Padahal Persebaya masih punya kesempatan dari penalti malah diudahin pertandingannya ... Tolol bgt si jadi wasit ... Mana yg ktanya mau berbenah ???
+1602650242998235137 2022-12-13 13:02:48 +0000 &lt;bhaskorojoyo&gt; @IDGoonerscom Setelah tragedi kanjuruhan. Males lihat liga indo
+1602647539089813505 2022-12-13 12:52:03 +0000 &lt;VIVAbola&gt; Kuasa Hukum Aremania Desak Polisi Rekonstruksi Ulang Tragedi Kanjuruhan  https://t.co/mV33md5rhw
+1602646734085459975 2022-12-13 12:48:51 +0000 &lt;andi_chairil&gt; Kirain setelah Tragedi Kanjuruhan dan tayangan Piala Dunia, Liga Indonesia jadi lebih mendingan | @PSSI @mohmahfudmd @KEMENPORA_RI @pt_lib
+1602643884877783040 2022-12-13 12:37:32 +0000 &lt;murahhmalang&gt; @Fandom_ID Sebelum tragedi kanjuruhan rutin nonton liga dagelan ini, skrng sudah gak nonton lagi, karena apapun yg terjadi nanti suporter cuma korban
+1602642561621188609 2022-12-13 12:32:17 +0000 &lt;opentamba&gt; @idextratime Sudah ada tragedi Kanjuruhan, kenapa masih ada wasit kotor seperti ini. Pecat wasit ini wahai @komitewasitpssi. Dimana mata kalian.
+1602641197113434113 2022-12-13 12:26:51 +0000 &lt;HarrisRegar&gt; Jika perhatian dgn tragedi Kanjuruhan. Liga satu gak perlu ditonton, dikomentari.
+1602639600874393601 2022-12-13 12:20:31 +0000 &lt;argoteopras&gt; Kalau kayak gini terjadi saat ada penonton dan yg dirugikan tuan rumah, tragedi kanjuruhan ke 2 mungkin saja cepat atau lambat akan terjadi lagi!!!
+1602639328819257344 2022-12-13 12:19:26 +0000 &lt;KusdiyantoAri&gt; @zenrs Dari masalah kecil yg menumpuk, bermuara di tragedi kanjuruhan yg tdk diusut tuntas, wis rabakal maju balbalan endonesa
+1602638506941349889 2022-12-13 12:16:10 +0000 &lt;aripakdheee&gt; @iIhamzada Alhamdulillah udah gak pernah nonton lagi semenjak tragedi kanjuruhan, doakan semoga saya konsisten dan istiqomah 🙏
+1602638306596261888 2022-12-13 12:15:22 +0000 &lt;kthvmslkh&gt; @parkbyunhe @byunkags Dari kmren nih gw liat sring bgt ada akun lokal yg tiba2 salpak ngedrag idol lain bawa2 BTS ARMY atau bandingin idol lain, eh pas kbukti trnyta bukan army. Owh iya yg thread lexxi itu ya fitnah army, tntg tragedi kanjuruhan ampe brapa ribu ya yg ngelike trnyta kbukti bukan army
+1602638179806244864 2022-12-13 12:14:52 +0000 &lt;musofaibrahim01&gt; @Indostransfer @pt_lib Tragedi kanjuruhan aja gak tanggunjawab apalagi soal ini, udah bosen protes terus soal kenerja federasi dan perangkatnya, capek
+1602635783319752705 2022-12-13 12:05:20 +0000 &lt;pikiran_rakyat&gt; Pikiran Suporter (Podcast) X Tobias Ginanjar &quot;Liga 1 Berjalan, Jangan Lupakan Tragedi Kanjuruhan&quot;    https://t.co/KXj5sMKuaI via @YouTube
 </pre></div>
 </div>
 </div>
@@ -1425,18 +930,18 @@ found 0 deleted tweets in this search.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     Tiga Keluarga Korban Tragedi Kanjuruhan Buat L...
-1     Jangankan minta maaf sekelas broadcaster  yg b...
-2        apa kabar kasus tragedi kanjuruhan iki bos ???
-3     Happy 1.3.1.2 Day  Kapan institusi keamanan in...
-4     @SiaranBolaLive Undur diri setelah Tragedi Kan...
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     Lempar-lemparan Berkas Perkara Tragedi Kanjuru...
+1     AHY: Tragedi Kanjuruhan Insiden Yang Memilukan...
+2     AHY: Tragedi Kanjuruhan Insiden Yang Memilukan...
+3     @pandji yakin lah, semakin lama sepakbola indo...
+4     @kh_putra boikot liga indonesia!. tragedi kanj...
                             ...                        
-64    #kanjuruhan #percayapolisi #kanjuruhandamai #p...
-65    #kanjuruhan #percayapolisi #kanjuruhandamai #p...
-66    #kanjuruhan #percayapolisi #kanjuruhandamai #p...
-67    #kanjuruhan #percayapolisi #kanjuruhandamai #p...
-68    Ini pula yg kurasakan saat terjadi tragedi Kan...
-Name: tweet, Length: 69, dtype: object
+75    @zenrs Dari masalah kecil yg menumpuk, bermuar...
+76    @iIhamzada Alhamdulillah udah gak pernah nonto...
+77    @parkbyunhe @byunkags Dari kmren nih gw liat s...
+78    @Indostransfer @pt_lib Tragedi kanjuruhan aja ...
+79    Pikiran Suporter (Podcast) X Tobias Ginanjar &quot;...
+Name: tweet, Length: 80, dtype: object
 </pre></div>
 </div>
 </div>
@@ -1463,9 +968,9 @@ Name: tweet, Length: 69, dtype: object
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
 Requirement already satisfied: pandas in /usr/local/lib/python3.8/dist-packages (1.3.5)
-Requirement already satisfied: numpy&gt;=1.17.3 in /usr/local/lib/python3.8/dist-packages (from pandas) (1.21.6)
-Requirement already satisfied: python-dateutil&gt;=2.7.3 in /usr/local/lib/python3.8/dist-packages (from pandas) (2.8.2)
 Requirement already satisfied: pytz&gt;=2017.3 in /usr/local/lib/python3.8/dist-packages (from pandas) (2022.6)
+Requirement already satisfied: python-dateutil&gt;=2.7.3 in /usr/local/lib/python3.8/dist-packages (from pandas) (2.8.2)
+Requirement already satisfied: numpy&gt;=1.17.3 in /usr/local/lib/python3.8/dist-packages (from pandas) (1.21.6)
 Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.8/dist-packages (from python-dateutil&gt;=2.7.3-&gt;pandas) (1.15.0)
 </pre></div>
 </div>
@@ -1502,38 +1007,7 @@ Requirement already satisfied: numpy in /usr/local/lib/python3.8/dist-packages (
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting sastrawi
-  Downloading Sastrawi-1.0.1-py2.py3-none-any.whl (209 kB)
-?25l
-     |█▋                              | 10 kB 21.8 MB/s eta 0:00:01
-     |███▏                            | 20 kB 6.1 MB/s eta 0:00:01
-     |████▊                           | 30 kB 8.6 MB/s eta 0:00:01
-     |██████▎                         | 40 kB 4.2 MB/s eta 0:00:01
-     |███████▉                        | 51 kB 4.5 MB/s eta 0:00:01
-     |█████████▍                      | 61 kB 5.3 MB/s eta 0:00:01
-     |███████████                     | 71 kB 5.3 MB/s eta 0:00:01
-     |████████████▌                   | 81 kB 4.1 MB/s eta 0:00:01
-     |██████████████                  | 92 kB 4.5 MB/s eta 0:00:01
-     |███████████████▋                | 102 kB 4.7 MB/s eta 0:00:01
-     |█████████████████▏              | 112 kB 4.7 MB/s eta 0:00:01
-     |██████████████████▊             | 122 kB 4.7 MB/s eta 0:00:01
-     |████████████████████▎           | 133 kB 4.7 MB/s eta 0:00:01
-     |█████████████████████▉          | 143 kB 4.7 MB/s eta 0:00:01
-     |███████████████████████▍        | 153 kB 4.7 MB/s eta 0:00:01
-     |█████████████████████████       | 163 kB 4.7 MB/s eta 0:00:01
-     |██████████████████████████▋     | 174 kB 4.7 MB/s eta 0:00:01
-     |████████████████████████████▏   | 184 kB 4.7 MB/s eta 0:00:01
-     |█████████████████████████████▊  | 194 kB 4.7 MB/s eta 0:00:01
-     |███████████████████████████████▎| 204 kB 4.7 MB/s eta 0:00:01
-     |████████████████████████████████| 209 kB 4.7 MB/s 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25hInstalling collected packages: sastrawi
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed sastrawi-1.0.1
+Requirement already satisfied: sastrawi in /usr/local/lib/python3.8/dist-packages (1.0.1)
 </pre></div>
 </div>
 </div>
@@ -1547,206 +1021,69 @@ Requirement already satisfied: numpy in /usr/local/lib/python3.8/dist-packages (
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting swifter
-  Downloading swifter-1.3.4.tar.gz (830 kB)
-?25l
-     |▍                               | 10 kB 23.6 MB/s eta 0:00:01
-     |▉                               | 20 kB 5.8 MB/s eta 0:00:01
-     |█▏                              | 30 kB 8.1 MB/s eta 0:00:01
-     |█▋                              | 40 kB 4.4 MB/s eta 0:00:01
-     |██                              | 51 kB 4.3 MB/s eta 0:00:01
-     |██▍                             | 61 kB 5.1 MB/s eta 0:00:01
-     |██▊                             | 71 kB 5.4 MB/s eta 0:00:01
-     |███▏                            | 81 kB 6.1 MB/s eta 0:00:01
-     |███▌                            | 92 kB 6.3 MB/s eta 0:00:01
-     |████                            | 102 kB 5.1 MB/s eta 0:00:01
-     |████▍                           | 112 kB 5.1 MB/s eta 0:00:01
-     |████▊                           | 122 kB 5.1 MB/s eta 0:00:01
-     |█████▏                          | 133 kB 5.1 MB/s eta 0:00:01
-     |█████▌                          | 143 kB 5.1 MB/s eta 0:00:01
-     |██████                          | 153 kB 5.1 MB/s eta 0:00:01
-     |██████▎                         | 163 kB 5.1 MB/s eta 0:00:01
-     |██████▊                         | 174 kB 5.1 MB/s eta 0:00:01
-     |███████                         | 184 kB 5.1 MB/s eta 0:00:01
-     |███████▌                        | 194 kB 5.1 MB/s eta 0:00:01
-     |███████▉                        | 204 kB 5.1 MB/s eta 0:00:01
-     |████████▎                       | 215 kB 5.1 MB/s eta 0:00:01
-     |████████▊                       | 225 kB 5.1 MB/s eta 0:00:01
-     |█████████                       | 235 kB 5.1 MB/s eta 0:00:01
-     |█████████▌                      | 245 kB 5.1 MB/s eta 0:00:01
-     |█████████▉                      | 256 kB 5.1 MB/s eta 0:00:01
-     |██████████▎                     | 266 kB 5.1 MB/s eta 0:00:01
-     |██████████▋                     | 276 kB 5.1 MB/s eta 0:00:01
-     |███████████                     | 286 kB 5.1 MB/s eta 0:00:01
-     |███████████▍                    | 296 kB 5.1 MB/s eta 0:00:01
-     |███████████▉                    | 307 kB 5.1 MB/s eta 0:00:01
-     |████████████▎                   | 317 kB 5.1 MB/s eta 0:00:01
-     |████████████▋                   | 327 kB 5.1 MB/s eta 0:00:01
-     |█████████████                   | 337 kB 5.1 MB/s eta 0:00:01
-     |█████████████▍                  | 348 kB 5.1 MB/s eta 0:00:01
-     |█████████████▉                  | 358 kB 5.1 MB/s eta 0:00:01
-     |██████████████▏                 | 368 kB 5.1 MB/s eta 0:00:01
-     |██████████████▋                 | 378 kB 5.1 MB/s eta 0:00:01
-     |███████████████                 | 389 kB 5.1 MB/s eta 0:00:01
-     |███████████████▍                | 399 kB 5.1 MB/s eta 0:00:01
-     |███████████████▊                | 409 kB 5.1 MB/s eta 0:00:01
-     |████████████████▏               | 419 kB 5.1 MB/s eta 0:00:01
-     |████████████████▋               | 430 kB 5.1 MB/s eta 0:00:01
-     |█████████████████               | 440 kB 5.1 MB/s eta 0:00:01
-     |█████████████████▍              | 450 kB 5.1 MB/s eta 0:00:01
-     |█████████████████▊              | 460 kB 5.1 MB/s eta 0:00:01
-     |██████████████████▏             | 471 kB 5.1 MB/s eta 0:00:01
-     |██████████████████▌             | 481 kB 5.1 MB/s eta 0:00:01
-     |███████████████████             | 491 kB 5.1 MB/s eta 0:00:01
-     |███████████████████▎            | 501 kB 5.1 MB/s eta 0:00:01
-     |███████████████████▊            | 512 kB 5.1 MB/s eta 0:00:01
-     |████████████████████▏           | 522 kB 5.1 MB/s eta 0:00:01
-     |████████████████████▌           | 532 kB 5.1 MB/s eta 0:00:01
-     |█████████████████████           | 542 kB 5.1 MB/s eta 0:00:01
-     |█████████████████████▎          | 552 kB 5.1 MB/s eta 0:00:01
-     |█████████████████████▊          | 563 kB 5.1 MB/s eta 0:00:01
-     |██████████████████████          | 573 kB 5.1 MB/s eta 0:00:01
-     |██████████████████████▌         | 583 kB 5.1 MB/s eta 0:00:01
-     |██████████████████████▉         | 593 kB 5.1 MB/s eta 0:00:01
-     |███████████████████████▎        | 604 kB 5.1 MB/s eta 0:00:01
-     |███████████████████████▋        | 614 kB 5.1 MB/s eta 0:00:01
-     |████████████████████████        | 624 kB 5.1 MB/s eta 0:00:01
-     |████████████████████████▌       | 634 kB 5.1 MB/s eta 0:00:01
-     |████████████████████████▉       | 645 kB 5.1 MB/s eta 0:00:01
-     |█████████████████████████▎      | 655 kB 5.1 MB/s eta 0:00:01
-     |█████████████████████████▋      | 665 kB 5.1 MB/s eta 0:00:01
-     |██████████████████████████      | 675 kB 5.1 MB/s eta 0:00:01
-     |██████████████████████████▍     | 686 kB 5.1 MB/s eta 0:00:01
-     |██████████████████████████▉     | 696 kB 5.1 MB/s eta 0:00:01
-     |███████████████████████████▏    | 706 kB 5.1 MB/s eta 0:00:01
-     |███████████████████████████▋    | 716 kB 5.1 MB/s eta 0:00:01
-     |████████████████████████████    | 727 kB 5.1 MB/s eta 0:00:01
-     |████████████████████████████▍   | 737 kB 5.1 MB/s eta 0:00:01
-     |████████████████████████████▉   | 747 kB 5.1 MB/s eta 0:00:01
-     |█████████████████████████████▏  | 757 kB 5.1 MB/s eta 0:00:01
-     |█████████████████████████████▋  | 768 kB 5.1 MB/s eta 0:00:01
-     |██████████████████████████████  | 778 kB 5.1 MB/s eta 0:00:01
-     |██████████████████████████████▍ | 788 kB 5.1 MB/s eta 0:00:01
-     |██████████████████████████████▊ | 798 kB 5.1 MB/s eta 0:00:01
-     |███████████████████████████████▏| 808 kB 5.1 MB/s eta 0:00:01
-     |███████████████████████████████▌| 819 kB 5.1 MB/s eta 0:00:01
-     |████████████████████████████████| 829 kB 5.1 MB/s eta 0:00:01
-     |████████████████████████████████| 830 kB 5.1 MB/s 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25hRequirement already satisfied: pandas&gt;=1.0.0 in /usr/local/lib/python3.8/dist-packages (from swifter) (1.3.5)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting psutil&gt;=5.6.6
-  Downloading psutil-5.9.4-cp36-abi3-manylinux_2_12_x86_64.manylinux2010_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (280 kB)
-?25l
-     |█▏                              | 10 kB 27.0 MB/s eta 0:00:01
-     |██▍                             | 20 kB 34.5 MB/s eta 0:00:01
-     |███▌                            | 30 kB 44.5 MB/s eta 0:00:01
-     |████▊                           | 40 kB 52.4 MB/s eta 0:00:01
-     |█████▉                          | 51 kB 57.4 MB/s eta 0:00:01
-     |███████                         | 61 kB 63.4 MB/s eta 0:00:01
-     |████████▏                       | 71 kB 65.9 MB/s eta 0:00:01
-     |█████████▍                      | 81 kB 68.7 MB/s eta 0:00:01
-     |██████████▌                     | 92 kB 71.6 MB/s eta 0:00:01
-     |███████████▊                    | 102 kB 74.6 MB/s eta 0:00:01
-     |████████████▉                   | 112 kB 74.6 MB/s eta 0:00:01
-     |██████████████                  | 122 kB 74.6 MB/s eta 0:00:01
-     |███████████████▏                | 133 kB 74.6 MB/s eta 0:00:01
-     |████████████████▍               | 143 kB 74.6 MB/s eta 0:00:01
-     |█████████████████▌              | 153 kB 74.6 MB/s eta 0:00:01
-     |██████████████████▊             | 163 kB 74.6 MB/s eta 0:00:01
-     |███████████████████▉            | 174 kB 74.6 MB/s eta 0:00:01
-     |█████████████████████           | 184 kB 74.6 MB/s eta 0:00:01
-     |██████████████████████▏         | 194 kB 74.6 MB/s eta 0:00:01
-     |███████████████████████▍        | 204 kB 74.6 MB/s eta 0:00:01
-     |████████████████████████▋       | 215 kB 74.6 MB/s eta 0:00:01
-     |█████████████████████████▊      | 225 kB 74.6 MB/s eta 0:00:01
-     |███████████████████████████     | 235 kB 74.6 MB/s eta 0:00:01
-     |████████████████████████████    | 245 kB 74.6 MB/s eta 0:00:01
-     |█████████████████████████████▎  | 256 kB 74.6 MB/s eta 0:00:01
-     |██████████████████████████████▍ | 266 kB 74.6 MB/s eta 0:00:01
-     |███████████████████████████████▋| 276 kB 74.6 MB/s eta 0:00:01
-     |████████████████████████████████| 280 kB 74.6 MB/s 
-?25hRequirement already satisfied: dask[dataframe]&gt;=2.10.0 in /usr/local/lib/python3.8/dist-packages (from swifter) (2022.2.1)
+Requirement already satisfied: swifter in /usr/local/lib/python3.8/dist-packages (1.3.4)
+Requirement already satisfied: bleach&gt;=3.1.1 in /usr/local/lib/python3.8/dist-packages (from swifter) (5.0.1)
+Requirement already satisfied: psutil&gt;=5.6.6 in /usr/local/lib/python3.8/dist-packages (from swifter) (5.9.4)
+Requirement already satisfied: parso&gt;0.4.0 in /usr/local/lib/python3.8/dist-packages (from swifter) (0.8.3)
 Requirement already satisfied: tqdm&gt;=4.33.0 in /usr/local/lib/python3.8/dist-packages (from swifter) (4.64.1)
 Requirement already satisfied: ipywidgets&gt;=7.0.0 in /usr/local/lib/python3.8/dist-packages (from swifter) (7.7.1)
 Requirement already satisfied: cloudpickle&gt;=0.2.2 in /usr/local/lib/python3.8/dist-packages (from swifter) (1.5.0)
-Requirement already satisfied: parso&gt;0.4.0 in /usr/local/lib/python3.8/dist-packages (from swifter) (0.8.3)
-Requirement already satisfied: bleach&gt;=3.1.1 in /usr/local/lib/python3.8/dist-packages (from swifter) (5.0.1)
-Requirement already satisfied: webencodings in /usr/local/lib/python3.8/dist-packages (from bleach&gt;=3.1.1-&gt;swifter) (0.5.1)
+Requirement already satisfied: pandas&gt;=1.0.0 in /usr/local/lib/python3.8/dist-packages (from swifter) (1.3.5)
+Requirement already satisfied: dask[dataframe]&gt;=2.10.0 in /usr/local/lib/python3.8/dist-packages (from swifter) (2022.2.1)
 Requirement already satisfied: six&gt;=1.9.0 in /usr/local/lib/python3.8/dist-packages (from bleach&gt;=3.1.1-&gt;swifter) (1.15.0)
-Requirement already satisfied: partd&gt;=0.3.10 in /usr/local/lib/python3.8/dist-packages (from dask[dataframe]&gt;=2.10.0-&gt;swifter) (1.3.0)
+Requirement already satisfied: webencodings in /usr/local/lib/python3.8/dist-packages (from bleach&gt;=3.1.1-&gt;swifter) (0.5.1)
 Requirement already satisfied: toolz&gt;=0.8.2 in /usr/local/lib/python3.8/dist-packages (from dask[dataframe]&gt;=2.10.0-&gt;swifter) (0.12.0)
-Requirement already satisfied: pyyaml&gt;=5.3.1 in /usr/local/lib/python3.8/dist-packages (from dask[dataframe]&gt;=2.10.0-&gt;swifter) (6.0)
-Requirement already satisfied: fsspec&gt;=0.6.0 in /usr/local/lib/python3.8/dist-packages (from dask[dataframe]&gt;=2.10.0-&gt;swifter) (2022.11.0)
 Requirement already satisfied: packaging&gt;=20.0 in /usr/local/lib/python3.8/dist-packages (from dask[dataframe]&gt;=2.10.0-&gt;swifter) (21.3)
+Requirement already satisfied: fsspec&gt;=0.6.0 in /usr/local/lib/python3.8/dist-packages (from dask[dataframe]&gt;=2.10.0-&gt;swifter) (2022.11.0)
+Requirement already satisfied: pyyaml&gt;=5.3.1 in /usr/local/lib/python3.8/dist-packages (from dask[dataframe]&gt;=2.10.0-&gt;swifter) (6.0)
+Requirement already satisfied: partd&gt;=0.3.10 in /usr/local/lib/python3.8/dist-packages (from dask[dataframe]&gt;=2.10.0-&gt;swifter) (1.3.0)
 Requirement already satisfied: numpy&gt;=1.18 in /usr/local/lib/python3.8/dist-packages (from dask[dataframe]&gt;=2.10.0-&gt;swifter) (1.21.6)
-Requirement already satisfied: jupyterlab-widgets&gt;=1.0.0 in /usr/local/lib/python3.8/dist-packages (from ipywidgets&gt;=7.0.0-&gt;swifter) (3.0.3)
+Requirement already satisfied: ipython&gt;=4.0.0 in /usr/local/lib/python3.8/dist-packages (from ipywidgets&gt;=7.0.0-&gt;swifter) (7.9.0)
+Requirement already satisfied: traitlets&gt;=4.3.1 in /usr/local/lib/python3.8/dist-packages (from ipywidgets&gt;=7.0.0-&gt;swifter) (5.6.0)
 Requirement already satisfied: ipython-genutils~=0.2.0 in /usr/local/lib/python3.8/dist-packages (from ipywidgets&gt;=7.0.0-&gt;swifter) (0.2.0)
 Requirement already satisfied: widgetsnbextension~=3.6.0 in /usr/local/lib/python3.8/dist-packages (from ipywidgets&gt;=7.0.0-&gt;swifter) (3.6.1)
+Requirement already satisfied: jupyterlab-widgets&gt;=1.0.0 in /usr/local/lib/python3.8/dist-packages (from ipywidgets&gt;=7.0.0-&gt;swifter) (3.0.3)
 Requirement already satisfied: ipykernel&gt;=4.5.1 in /usr/local/lib/python3.8/dist-packages (from ipywidgets&gt;=7.0.0-&gt;swifter) (5.3.4)
-Requirement already satisfied: traitlets&gt;=4.3.1 in /usr/local/lib/python3.8/dist-packages (from ipywidgets&gt;=7.0.0-&gt;swifter) (5.6.0)
-Requirement already satisfied: ipython&gt;=4.0.0 in /usr/local/lib/python3.8/dist-packages (from ipywidgets&gt;=7.0.0-&gt;swifter) (7.9.0)
-Requirement already satisfied: tornado&gt;=4.2 in /usr/local/lib/python3.8/dist-packages (from ipykernel&gt;=4.5.1-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (6.2)
 Requirement already satisfied: jupyter-client in /usr/local/lib/python3.8/dist-packages (from ipykernel&gt;=4.5.1-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (6.1.12)
+Requirement already satisfied: tornado&gt;=4.2 in /usr/local/lib/python3.8/dist-packages (from ipykernel&gt;=4.5.1-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (6.2)
+Requirement already satisfied: pexpect in /usr/local/lib/python3.8/dist-packages (from ipython&gt;=4.0.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (4.8.0)
+Requirement already satisfied: pickleshare in /usr/local/lib/python3.8/dist-packages (from ipython&gt;=4.0.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (0.7.5)
+Requirement already satisfied: decorator in /usr/local/lib/python3.8/dist-packages (from ipython&gt;=4.0.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (4.4.2)
+Requirement already satisfied: setuptools&gt;=18.5 in /usr/local/lib/python3.8/dist-packages (from ipython&gt;=4.0.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (57.4.0)
+Requirement already satisfied: jedi&gt;=0.10 in /usr/local/lib/python3.8/dist-packages (from ipython&gt;=4.0.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (0.18.2)
+Requirement already satisfied: prompt-toolkit&lt;2.1.0,&gt;=2.0.0 in /usr/local/lib/python3.8/dist-packages (from ipython&gt;=4.0.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (2.0.10)
+Requirement already satisfied: pygments in /usr/local/lib/python3.8/dist-packages (from ipython&gt;=4.0.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (2.6.1)
+Requirement already satisfied: backcall in /usr/local/lib/python3.8/dist-packages (from ipython&gt;=4.0.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (0.2.0)
+Requirement already satisfied: pyparsing!=3.0.5,&gt;=2.0.2 in /usr/local/lib/python3.8/dist-packages (from packaging&gt;=20.0-&gt;dask[dataframe]&gt;=2.10.0-&gt;swifter) (3.0.9)
+Requirement already satisfied: pytz&gt;=2017.3 in /usr/local/lib/python3.8/dist-packages (from pandas&gt;=1.0.0-&gt;swifter) (2022.6)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pickleshare in /usr/local/lib/python3.8/dist-packages (from ipython&gt;=4.0.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (0.7.5)
-Requirement already satisfied: backcall in /usr/local/lib/python3.8/dist-packages (from ipython&gt;=4.0.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (0.2.0)
-Requirement already satisfied: jedi&gt;=0.10 in /usr/local/lib/python3.8/dist-packages (from ipython&gt;=4.0.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (0.18.2)
-Requirement already satisfied: pygments in /usr/local/lib/python3.8/dist-packages (from ipython&gt;=4.0.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (2.6.1)
-Requirement already satisfied: prompt-toolkit&lt;2.1.0,&gt;=2.0.0 in /usr/local/lib/python3.8/dist-packages (from ipython&gt;=4.0.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (2.0.10)
-Requirement already satisfied: setuptools&gt;=18.5 in /usr/local/lib/python3.8/dist-packages (from ipython&gt;=4.0.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (57.4.0)
-Requirement already satisfied: decorator in /usr/local/lib/python3.8/dist-packages (from ipython&gt;=4.0.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (4.4.2)
-Requirement already satisfied: pexpect in /usr/local/lib/python3.8/dist-packages (from ipython&gt;=4.0.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (4.8.0)
-Requirement already satisfied: pyparsing!=3.0.5,&gt;=2.0.2 in /usr/local/lib/python3.8/dist-packages (from packaging&gt;=20.0-&gt;dask[dataframe]&gt;=2.10.0-&gt;swifter) (3.0.9)
-Requirement already satisfied: python-dateutil&gt;=2.7.3 in /usr/local/lib/python3.8/dist-packages (from pandas&gt;=1.0.0-&gt;swifter) (2.8.2)
-Requirement already satisfied: pytz&gt;=2017.3 in /usr/local/lib/python3.8/dist-packages (from pandas&gt;=1.0.0-&gt;swifter) (2022.6)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: python-dateutil&gt;=2.7.3 in /usr/local/lib/python3.8/dist-packages (from pandas&gt;=1.0.0-&gt;swifter) (2.8.2)
 Requirement already satisfied: locket in /usr/local/lib/python3.8/dist-packages (from partd&gt;=0.3.10-&gt;dask[dataframe]&gt;=2.10.0-&gt;swifter) (1.0.0)
 Requirement already satisfied: wcwidth in /usr/local/lib/python3.8/dist-packages (from prompt-toolkit&lt;2.1.0,&gt;=2.0.0-&gt;ipython&gt;=4.0.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (0.2.5)
 Requirement already satisfied: notebook&gt;=4.4.1 in /usr/local/lib/python3.8/dist-packages (from widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (5.7.16)
-Requirement already satisfied: prometheus-client in /usr/local/lib/python3.8/dist-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (0.15.0)
-Requirement already satisfied: jinja2&lt;=3.0.0 in /usr/local/lib/python3.8/dist-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (2.11.3)
-Requirement already satisfied: Send2Trash in /usr/local/lib/python3.8/dist-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (1.8.0)
-Requirement already satisfied: jupyter-core&gt;=4.4.0 in /usr/local/lib/python3.8/dist-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (5.1.0)
 Requirement already satisfied: nbconvert&lt;6.0 in /usr/local/lib/python3.8/dist-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (5.6.1)
-Requirement already satisfied: pyzmq&gt;=17 in /usr/local/lib/python3.8/dist-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (23.2.1)
 Requirement already satisfied: nbformat in /usr/local/lib/python3.8/dist-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (5.7.0)
+Requirement already satisfied: Send2Trash in /usr/local/lib/python3.8/dist-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (1.8.0)
+Requirement already satisfied: pyzmq&gt;=17 in /usr/local/lib/python3.8/dist-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (23.2.1)
+Requirement already satisfied: jinja2&lt;=3.0.0 in /usr/local/lib/python3.8/dist-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (2.11.3)
+Requirement already satisfied: prometheus-client in /usr/local/lib/python3.8/dist-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (0.15.0)
+Requirement already satisfied: jupyter-core&gt;=4.4.0 in /usr/local/lib/python3.8/dist-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (5.1.0)
 Requirement already satisfied: terminado&gt;=0.8.1 in /usr/local/lib/python3.8/dist-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (0.13.3)
 Requirement already satisfied: MarkupSafe&gt;=0.23 in /usr/local/lib/python3.8/dist-packages (from jinja2&lt;=3.0.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (2.0.1)
 Requirement already satisfied: platformdirs&gt;=2.5 in /usr/local/lib/python3.8/dist-packages (from jupyter-core&gt;=4.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (2.5.4)
+Requirement already satisfied: mistune&lt;2,&gt;=0.8.1 in /usr/local/lib/python3.8/dist-packages (from nbconvert&lt;6.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (0.8.4)
+Requirement already satisfied: testpath in /usr/local/lib/python3.8/dist-packages (from nbconvert&lt;6.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (0.6.0)
+Requirement already satisfied: defusedxml in /usr/local/lib/python3.8/dist-packages (from nbconvert&lt;6.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (0.7.1)
+Requirement already satisfied: entrypoints&gt;=0.2.2 in /usr/local/lib/python3.8/dist-packages (from nbconvert&lt;6.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (0.4)
+Requirement already satisfied: pandocfilters&gt;=1.4.1 in /usr/local/lib/python3.8/dist-packages (from nbconvert&lt;6.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (1.5.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: entrypoints&gt;=0.2.2 in /usr/local/lib/python3.8/dist-packages (from nbconvert&lt;6.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (0.4)
-Requirement already satisfied: testpath in /usr/local/lib/python3.8/dist-packages (from nbconvert&lt;6.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (0.6.0)
-Requirement already satisfied: mistune&lt;2,&gt;=0.8.1 in /usr/local/lib/python3.8/dist-packages (from nbconvert&lt;6.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (0.8.4)
-Requirement already satisfied: pandocfilters&gt;=1.4.1 in /usr/local/lib/python3.8/dist-packages (from nbconvert&lt;6.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (1.5.0)
-Requirement already satisfied: defusedxml in /usr/local/lib/python3.8/dist-packages (from nbconvert&lt;6.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (0.7.1)
-Requirement already satisfied: jsonschema&gt;=2.6 in /usr/local/lib/python3.8/dist-packages (from nbformat-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (3.2.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: jsonschema&gt;=2.6 in /usr/local/lib/python3.8/dist-packages (from nbformat-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (3.2.0)
 Requirement already satisfied: fastjsonschema in /usr/local/lib/python3.8/dist-packages (from nbformat-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (2.16.2)
 Requirement already satisfied: pyrsistent&gt;=0.14.0 in /usr/local/lib/python3.8/dist-packages (from jsonschema&gt;=2.6-&gt;nbformat-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (0.19.2)
 Requirement already satisfied: attrs&gt;=17.4.0 in /usr/local/lib/python3.8/dist-packages (from jsonschema&gt;=2.6-&gt;nbformat-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (21.4.0)
 Requirement already satisfied: ptyprocess in /usr/local/lib/python3.8/dist-packages (from terminado&gt;=0.8.1-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.0.0-&gt;swifter) (0.7.0)
-Building wheels for collected packages: swifter
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Building wheel for swifter (setup.py) ... ?25l?25hdone
-  Created wheel for swifter: filename=swifter-1.3.4-py3-none-any.whl size=16321 sha256=507390d46a988a7b0246fe0105fe6ea129c39b2df33971bba82861b5dc01a52d
-  Stored in directory: /root/.cache/pip/wheels/08/66/b4/921e351e63d88696932279d6163e125727c9da70ed8ca38419
-Successfully built swifter
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: psutil, swifter
-  Attempting uninstall: psutil
-    Found existing installation: psutil 5.4.8
-    Uninstalling psutil-5.4.8:
-      Successfully uninstalled psutil-5.4.8
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed psutil-5.9.4 swifter-1.3.4
 </pre></div>
 </div>
 </div>
@@ -1765,18 +1102,18 @@ Successfully built swifter
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     tiga keluarga korban tragedi kanjuruhan buat l...
-1     jangankan minta maaf sekelas broadcaster  yg b...
-2        apa kabar kasus tragedi kanjuruhan iki bos ???
-3     happy 1.3.1.2 day  kapan institusi keamanan in...
-4     @siaranbolalive undur diri setelah tragedi kan...
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     lempar-lemparan berkas perkara tragedi kanjuru...
+1     ahy: tragedi kanjuruhan insiden yang memilukan...
+2     ahy: tragedi kanjuruhan insiden yang memilukan...
+3     @pandji yakin lah, semakin lama sepakbola indo...
+4     @kh_putra boikot liga indonesia!. tragedi kanj...
                             ...                        
-64    #kanjuruhan #percayapolisi #kanjuruhandamai #p...
-65    #kanjuruhan #percayapolisi #kanjuruhandamai #p...
-66    #kanjuruhan #percayapolisi #kanjuruhandamai #p...
-67    #kanjuruhan #percayapolisi #kanjuruhandamai #p...
-68    ini pula yg kurasakan saat terjadi tragedi kan...
-Name: tweet, Length: 69, dtype: object
+75    @zenrs dari masalah kecil yg menumpuk, bermuar...
+76    @iihamzada alhamdulillah udah gak pernah nonto...
+77    @parkbyunhe @byunkags dari kmren nih gw liat s...
+78    @indostransfer @pt_lib tragedi kanjuruhan aja ...
+79    pikiran suporter (podcast) x tobias ginanjar &quot;...
+Name: tweet, Length: 80, dtype: object
 </pre></div>
 </div>
 </div>
@@ -1791,10 +1128,10 @@ Name: tweet, Length: 69, dtype: object
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
 Requirement already satisfied: nltk in /usr/local/lib/python3.8/dist-packages (3.7)
-Requirement already satisfied: regex&gt;=2021.8.3 in /usr/local/lib/python3.8/dist-packages (from nltk) (2022.6.2)
-Requirement already satisfied: tqdm in /usr/local/lib/python3.8/dist-packages (from nltk) (4.64.1)
-Requirement already satisfied: click in /usr/local/lib/python3.8/dist-packages (from nltk) (7.1.2)
 Requirement already satisfied: joblib in /usr/local/lib/python3.8/dist-packages (from nltk) (1.2.0)
+Requirement already satisfied: click in /usr/local/lib/python3.8/dist-packages (from nltk) (7.1.2)
+Requirement already satisfied: tqdm in /usr/local/lib/python3.8/dist-packages (from nltk) (4.64.1)
+Requirement already satisfied: regex&gt;=2021.8.3 in /usr/local/lib/python3.8/dist-packages (from nltk) (2022.6.2)
 </pre></div>
 </div>
 </div>
@@ -1828,18 +1165,18 @@ Requirement already satisfied: joblib in /usr/local/lib/python3.8/dist-packages 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     tiga keluarga korban tragedi kanjuruhan buat l...
-1     jangankan minta maaf sekelas broadcaster yg bi...
-2        apa kabar kasus tragedi kanjuruhan iki bos ???
-3     happy 1.3.1.2 day kapan institusi keamanan ini...
-4          undur diri setelah tragedi kanjuruhan ??????
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     lempar-lemparan berkas perkara tragedi kanjuru...
+1     ahy: tragedi kanjuruhan insiden yang memilukan...
+2     ahy: tragedi kanjuruhan insiden yang memilukan...
+3     yakin lah, semakin lama sepakbola indo ditingg...
+4     _putra boikot liga indonesia!. tragedi kanjuru...
                             ...                        
-64                                                     
-65                                                     
-66                                                     
-67                                                     
-68    ini pula yg kurasakan saat terjadi tragedi kan...
-Name: tweet, Length: 69, dtype: object
+75    dari masalah kecil yg menumpuk, bermuara di tr...
+76    alhamdulillah udah gak pernah nonton lagi seme...
+77    dari kmren nih gw liat sring bgt ada akun loka...
+78    _lib tragedi kanjuruhan aja gak tanggunjawab a...
+79    pikiran suporter (podcast) x tobias ginanjar &quot;...
+Name: tweet, Length: 80, dtype: object
 </pre></div>
 </div>
 </div>
@@ -1859,18 +1196,18 @@ Name: tweet, Length: 69, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     tiga keluarga korban tragedi kanjuruhan buat l...
-1     jangankan minta maaf sekelas broadcaster yg bi...
-2        apa kabar kasus tragedi kanjuruhan iki bos ???
-3     happy ... day kapan institusi keamanan ini tid...
-4          undur diri setelah tragedi kanjuruhan ??????
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     lempar-lemparan berkas perkara tragedi kanjuru...
+1     ahy: tragedi kanjuruhan insiden yang memilukan...
+2     ahy: tragedi kanjuruhan insiden yang memilukan...
+3     yakin lah, semakin lama sepakbola indo ditingg...
+4     _putra boikot liga indonesia!. tragedi kanjuru...
                             ...                        
-64                                                     
-65                                                     
-66                                                     
-67                                                     
-68    ini pula yg kurasakan saat terjadi tragedi kan...
-Name: tweet, Length: 69, dtype: object
+75    dari masalah kecil yg menumpuk, bermuara di tr...
+76    alhamdulillah udah gak pernah nonton lagi seme...
+77    dari kmren nih gw liat sring bgt ada akun loka...
+78    _lib tragedi kanjuruhan aja gak tanggunjawab a...
+79    pikiran suporter (podcast) x tobias ginanjar &quot;...
+Name: tweet, Length: 80, dtype: object
 </pre></div>
 </div>
 </div>
@@ -1890,18 +1227,18 @@ Name: tweet, Length: 69, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     tiga keluarga korban tragedi kanjuruhan buat l...
-1     jangankan minta maaf sekelas broadcaster yg bi...
-2           apa kabar kasus tragedi kanjuruhan iki bos 
-3     happy  day kapan institusi keamanan ini tidak ...
-4                undur diri setelah tragedi kanjuruhan 
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     lemparlemparan berkas perkara tragedi kanjuruh...
+1     ahy tragedi kanjuruhan insiden yang memilukan ...
+2     ahy tragedi kanjuruhan insiden yang memilukan ...
+3     yakin lah semakin lama sepakbola indo ditingga...
+4     putra boikot liga indonesia tragedi kanjuruhan...
                             ...                        
-64                                                     
-65                                                     
-66                                                     
-67                                                     
-68    ini pula yg kurasakan saat terjadi tragedi kan...
-Name: tweet, Length: 69, dtype: object
+75    dari masalah kecil yg menumpuk bermuara di tra...
+76    alhamdulillah udah gak pernah nonton lagi seme...
+77    dari kmren nih gw liat sring bgt ada akun loka...
+78    lib tragedi kanjuruhan aja gak tanggunjawab ap...
+79    pikiran suporter podcast x tobias ginanjar lig...
+Name: tweet, Length: 80, dtype: object
 </pre></div>
 </div>
 </div>
@@ -1928,18 +1265,18 @@ Name: tweet, Length: 69, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     tiga keluarga korban tragedi kanjuruhan buat l...
-1     jangankan minta maaf sekelas broadcaster yg bi...
-2            apa kabar kasus tragedi kanjuruhan iki bos
-3     happy day kapan institusi keamanan ini tidak m...
-4                 undur diri setelah tragedi kanjuruhan
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     lemparlemparan berkas perkara tragedi kanjuruh...
+1     ahy tragedi kanjuruhan insiden yang memilukan ...
+2     ahy tragedi kanjuruhan insiden yang memilukan ...
+3     yakin lah semakin lama sepakbola indo ditingga...
+4     putra boikot liga indonesia tragedi kanjuruhan...
                             ...                        
-64                                                     
-65                                                     
-66                                                     
-67                                                     
-68    ini pula yg kurasakan saat terjadi tragedi kan...
-Name: tweet, Length: 69, dtype: object
+75    dari masalah kecil yg menumpuk bermuara di tra...
+76    alhamdulillah udah gak pernah nonton lagi seme...
+77    dari kmren nih gw liat sring bgt ada akun loka...
+78    lib tragedi kanjuruhan aja gak tanggunjawab ap...
+79    pikiran suporter podcast x tobias ginanjar lig...
+Name: tweet, Length: 80, dtype: object
 </pre></div>
 </div>
 </div>
@@ -1959,18 +1296,18 @@ Name: tweet, Length: 69, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     tiga keluarga korban tragedi kanjuruhan buat l...
-1     jangankan minta maaf sekelas broadcaster yg bi...
-2            apa kabar kasus tragedi kanjuruhan iki bos
-3     happy day kapan institusi keamanan ini tidak m...
-4                 undur diri setelah tragedi kanjuruhan
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     lemparlemparan berkas perkara tragedi kanjuruh...
+1     ahy tragedi kanjuruhan insiden yang memilukan ...
+2     ahy tragedi kanjuruhan insiden yang memilukan ...
+3     yakin lah semakin lama sepakbola indo ditingga...
+4     putra boikot liga indonesia tragedi kanjuruhan...
                             ...                        
-64                                                     
-65                                                     
-66                                                     
-67                                                     
-68    ini pula yg kurasakan saat terjadi tragedi kan...
-Name: tweet, Length: 69, dtype: object
+75    dari masalah kecil yg menumpuk bermuara di tra...
+76    alhamdulillah udah gak pernah nonton lagi seme...
+77    dari kmren nih gw liat sring bgt ada akun loka...
+78    lib tragedi kanjuruhan aja gak tanggunjawab ap...
+79    pikiran suporter podcast   tobias ginanjar lig...
+Name: tweet, Length: 80, dtype: object
 </pre></div>
 </div>
 </div>
@@ -1984,7 +1321,7 @@ Name: tweet, Length: 69, dtype: object
 </div>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data] Downloading package punkt to /root/nltk_data...
-[nltk_data]   Unzipping tokenizers/punkt.zip.
+[nltk_data]   Package punkt is already up-to-date!
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
@@ -2009,18 +1346,18 @@ Name: tweet, Length: 69, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     [tiga, keluarga, korban, tragedi, kanjuruhan, ...
-1     [jangankan, minta, maaf, sekelas, broadcaster,...
-2     [apa, kabar, kasus, tragedi, kanjuruhan, iki, ...
-3     [happy, day, kapan, institusi, keamanan, ini, ...
-4           [undur, diri, setelah, tragedi, kanjuruhan]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     [lemparlemparan, berkas, perkara, tragedi, kan...
+1     [ahy, tragedi, kanjuruhan, insiden, yang, memi...
+2     [ahy, tragedi, kanjuruhan, insiden, yang, memi...
+3     [yakin, lah, semakin, lama, sepakbola, indo, d...
+4     [putra, boikot, liga, indonesia, tragedi, kanj...
                             ...                        
-64                                                   []
-65                                                   []
-66                                                   []
-67                                                   []
-68    [ini, pula, yg, kurasakan, saat, terjadi, trag...
-Name: tweet, Length: 69, dtype: object
+75    [dari, masalah, kecil, yg, menumpuk, bermuara,...
+76    [alhamdulillah, udah, gak, pernah, nonton, lag...
+77    [dari, kmren, nih, gw, liat, sring, bgt, ada, ...
+78    [lib, tragedi, kanjuruhan, aja, gak, tanggunja...
+79    [pikiran, suporter, podcast, tobias, ginanjar,...
+Name: tweet, Length: 80, dtype: object
 </pre></div>
 </div>
 </div>
@@ -2039,7 +1376,7 @@ Name: tweet, Length: 69, dtype: object
 </div>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data] Downloading package stopwords to /root/nltk_data...
-[nltk_data]   Unzipping corpora/stopwords.zip.
+[nltk_data]   Package stopwords is already up-to-date!
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
@@ -2062,18 +1399,18 @@ Name: tweet, Length: 69, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     [keluarga, korban, tragedi, kanjuruhan, lapora...
-1     [maaf, sekelas, broadcaster, yg, bikin, tayang...
-2                [kabar, tragedi, kanjuruhan, iki, bos]
-3     [happy, day, institusi, keamanan, mengancam, a...
-4                          [undur, tragedi, kanjuruhan]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     [lemparlemparan, berkas, perkara, tragedi, kan...
+1     [ahy, tragedi, kanjuruhan, insiden, memilukan,...
+2     [ahy, tragedi, kanjuruhan, insiden, memilukan,...
+3     [sepakbola, indo, ditinggal, supporternya, dal...
+4     [putra, boikot, liga, indonesia, tragedi, kanj...
                             ...                        
-64                                                   []
-65                                                   []
-66                                                   []
-67                                                   []
-68    [yg, kurasakan, tragedi, kanjuruhan, marah, ke...
-Name: tweet, Length: 69, dtype: object
+75    [yg, menumpuk, bermuara, tragedi, kanjuruhan, ...
+76    [alhamdulillah, udah, gak, nonton, semenjak, t...
+77    [kmren, nih, gw, liat, sring, bgt, akun, lokal...
+78    [lib, tragedi, kanjuruhan, aja, gak, tanggunja...
+79    [pikiran, suporter, podcast, tobias, ginanjar,...
+Name: tweet, Length: 80, dtype: object
 </pre></div>
 </div>
 </div>
@@ -2124,630 +1461,596 @@ Name: tweet, Length: 69, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>533
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>614
 ------------------------
-keluarga : keluarga
-korban : korban
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>lemparlemparan : lemparlemparan
+berkas : berkas
+perkara : perkara
 tragedi : tragedi
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>kanjuruhan : kanjuruhan
-laporan : lapor
-polres : polres
 malang : malang
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mencari : cari
-keadilan : adil
-via : via
-maaf : maaf
-sekelas : kelas
-broadcaster : broadcaster
-yg
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> : yg
-bikin : bikin
-tayangan : tayang
-malam : malam
-liga : liga
-pemimpin : pimpin
-media : media
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mojok : mojok
-aja : aja
-level : level
-arogansinya : arogansi
-moto : moto
-makan : makan
-kabar : kabar
-iki : iki
-bos : bos
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>happy : happy
-day : day
-institusi : institusi
-keamanan : aman
-mengancam : ancam
-aman : aman
-masyarakat : masyarakat
-nyawa : nyawa
-dianggap : anggap
-kejadian : jadi
-dr : dr
-titik : titik
-terang : terang
-semoga : moga
-perusak : usak
-dpt : dpt
-balasan : balas
-undur : undur
-duka : duka
-mendalam : dalam
-meninggalnya : tinggal
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>eril : eril
-anak : anak
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ridwan : ridwan
-kamil : kamil
-datangi : datang
-dikawal : kawal
-aremania : aremania
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>menggugat : gugat
-sek : sek
-dilakoni : lakon
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>kaesang : kaesang
-dinggo : dinggo
-wes : wes
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>akeh : akeh
-vot : vot
-kongres : kongres
-iku : iku
-bentuk : bentuk
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>upoyo : upoyo
-gae : gae
-sepakbola : sepakbola
-apik : apik
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>arema : arema
-kenek : kenek
-opo : opo
-lelakonne : lelakonne
-gur
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> : gur
-meneng : neng
-melok : lok
-ib : ib
-penyidik : sidik
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ditreskrimum : ditreskrimum
-polda : polda
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>jatim : jatim
-menyerahkan : serah
-berkas : berkas
-perkara : perkara
-kejaksaan : jaksa
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>jawa : jawa
-timur : timur
-pengembalian : kembali
-kali : kali
-kepolisian : polisi
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gimana : gimana
-pergerakan : gera
-perkembangan : kembang
-terlelap : lelap
-loh : loh
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pasca : pasca
 ahy : ahy
-ajak : ajak
-rakyat : rakyat
-kawal : kawal
-investigasi : investigasi
+insiden : insiden
+memilukan : milu
+memalukan : malu
+sepakbola : sepakbola
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>indo : indo
+ditinggal : tinggal
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>supporternya : supporternya
+dalamnya : dalam
+aja : aja
+udah : udah
+sakit : sakit
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tegor : tegor
+tau : tau
+gimana : gimana
+bola : bola
+indonesia : indonesia
+putra : putra
+boikot : boikot
+liga : liga
 tuntas : tuntas
-khususon : khususon
+dijalankan : jalan
+gw : gw
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>almarhummah : almarhummah
-tragedy : tragedy
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gblakanjuruhan : gblakanjuruhan
-bonekjak : bonekjak
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fansbototoh : fansbototoh
-alfatehah : alfatehah
-tersisa : sisa
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pengelolaan : kelola
-stadion : stadion
-kemarahan : marah
-kesedihan : sedih
-bergema : gema
-sudut : sudut
-kota : kota
-merasakan : rasa
-betapa : betapa
-hilang : hilang
-tergantikan : ganti
-usut : usut
-jalan : jalan
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sioon : sioon
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>away : away
+semenjak : semenjak
 males : males
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nonton : nonton
+lokal : lokal
+dianggep : dianggep
+objek : objek
+subjek : subjek
+ngapain : ngapain
+stadion : stadion
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>menpora : menpora
+harap : harap
+tiru : tiru
+maroko : maroko
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pemain : main
+naturalisasi : naturalisasi
+ketinggian : tinggi
+benahi : benah
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pssi : pssi
-semenjak : semenjak
-gua : gua
+tuntaskan : tuntas
+salam : salam
+gas : gas
+air : air
+mata : mata
+wasit : wasit
+argentina : argentina
+bayi : bayi
+ajaib : ajaib
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>saudi : saudi
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>arabia : arabia
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>messi : messi
+rachel : rachel
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>vennya : vennya
+mahasiswa : mahasiswa
+menikah : meni
+aguero : aguero
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>licha : licha
+gvardiol : gvardiol
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>alvarez : alvarez
+daesang : daesang
+berdampak : dampak
+ditambah : tambah
+niat : niat
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>memperbaiki : baik
+cuci : cuci
+tangan : tangan
+dr : dr
+federasi : federasi
+laporan : lapor
+dokter : dokter
+korban : korban
+isinya : isi
+paparan : papar
+ga : ga
+ntn : ntn
+sistem : sistem
+dibenahi : benah
+lini : lini
+takutnya : takut
+berdarah : darah
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>inget : inget
+petinggi : petinggi
+yg : yg
+bilang : bilang
+pasca : pasca
+kalo : kalo
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>supporter : supporter
+damai : damai
+gak : gak
+serunya : seru
+kompetisi : kompetisi
+bikin : bikin
+keputusan : putus
+ngawur : ngawur
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>match : match
+memelihara : pelihara
+kecurigaan : curiga
+amp : amp
+timbul : timbul
+dendam : dendam
+hubungkan : hubung
+ato : ato
+banjir : banjir
+arab : arab
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hadeh : hadeh
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>segitunya : segitunya
+berita : berita
+ngurus : ngurus
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>belom : bom
+selesai : selesai
+detik : detik
+kinerja : kerja
+kesini : kesini
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ancoorini : ancoorini
+malu : malu
+mungut : mungut
+duit : duit
+sanksi : sanksi
+kontestan : kontestan
+profesional : profesional
+otaknya : otak
+masyarakat : masyarakat
+mendukung : dukung
+geng : geng
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sambo : sambo
+dihukum : hukum
+qisos : qisos
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>khilafah : khilafah
+terlibat : libat
+pembunuhan : bunuh
+km : km
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ahmad : ahmad
+khozinudin : khozinudin
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pejuang : juang
+taati : taat
+allah : allah
+rasulnya : rasul
+syariah : syariah
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>kaffah : kaffah
+solusi : solusi
+utama : utama
+beautiful : beautiful
+keruwetannya : ruwet
+usut : usut
+banget : banget
+kemarin : kemarin
+mute : mute
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>wkwkwk : wkwkwk
+spam : spam
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>kenorakannya : norak
+gegara : gegara
+gk : gk
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>respect : respect
+dibikin : bikin
+guyonan : guyon
+redsindo : redsindo
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>keliahatan : keliahatan
+bobrok : bobrok
+nasional : nasional
+populer : populer
+penjelasan : jelas
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bharada : bharada
+update : update
+af : af
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dipermainkan : main
+cuman : cuman
+jeda : jeda
+dipake : dipake
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>briefing : briefing
+mafia : mafia
+sepak : sepak
+turun : turun
+antusiasnya : antusias
+ya : ya
+pemasang : pasang
+judi : judi
+kriminalitas : kriminalitas
+ramai : ramai
+pengaturan : atur
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>score : score
+antusias : antusias
+generasi : generasi
+kedepan : depan
+hiburan : hibur
+ane : ane
+anggap : anggap
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bersamaan : sama
+gapernah : gapernah
+lgi : lgi
+jg : jg
+busuk : busuk
+cacat : cacat
+mending : mending
+dukung : dukung
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sattt : sattt
+bom : bom
+meledak : ledak
+kyk : kyk
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ngerti : ngerti
+ae : ae
+koen : koen
+iku : iku
+sek : sek
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pelapor : lapor
+dugaan : duga
+bertambah : tambah
+keluarga : keluarga
+kelanjutan : lanjut
 udh : udh
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sampe : sampe
+sebatas : batas
+jargon : jargon
+doang : doang
+gua : gua
+kudet : kudet
 muak : muak
 dgn : dgn
-persepakbolaan : persepakbolaan
-nasional : nasional
+orang : orang
+bebal : bebal
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>timnas : timnas
-indonesia : indonesia
-saw : saw
-one : one
-of : of
-the : the
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>melanjutkan : lanjut
+peduli : peduli
+nasib : nasib
+bedarah : bedarah
+nya : nya
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>worlds : worlds
-worst : worst
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>penanganan : tangan
+gajelas : gajelas
+kek : kek
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>football : football
-on : on
-oct : oct
-st : st
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>malas : malas
+timnas : timnas
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>deaths : deaths
-what : what
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ditangani : tangan
+serius : serius
+berbicara : bicara
+apapun : apa
+lu : lu
+coba : coba
+liat : liat
+statement : statement
+anggota : anggota
+pas : pas
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>happened : happened
-exactly : exactly
-and : and
-is : is
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gamau : gamau
+pemerintah : perintah
+campur : campur
+rapat : rapat
+klb : klb
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>behind : behind
-indonesias : indonesias
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>guoblok : guoblok
+lib : lib
+heran : heran
+terulang : ulang
+karna : karna
+liganya : liga
+emang : emang
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>violence : violence
-catch : catch
-it : it
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>thurs : thurs
-dec : dec
-at : at
-pm : pm
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sgmsia : sgmsia
-time : time
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>here : here
-insiden : insiden
-memilukan : milu
-memalukan : malu
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>anjink : anjink
+emg : emg
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bener : bener
-ancen : ancen
-seng : seng
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>menyuarakan : suara
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>kajuruhan : kajuruhan
-awak : awak
-dewe : dewe
-gampang : gampang
-adu : adu
-domba : domba
-maneh : maneh
-suporter : suporter
-ayo : ayo
-berjuang : juang
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>duduk : duduk
-tok : tok
-gawe : gawe
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>kedepan : depan
-cucu : cucu
-mu : mu
-cek : cek
-ga : ga
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dulinan : dulinan
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>polri : polri
-fotonya : foto
-dijadiin : dijadiin
-gambar : gambar
-kaos : kaos
-bagus : bagus
-foto : foto
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>legend : legend
-lagu : lagu
-pengingat : ingat
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fikirmu : fikirmu
-kebalik : balik
-emang : emang
-lu : lu
-dapet : dapet
-fc : fc
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pembongkaran : bongkar
-pagar : pagar
-terkait : kait
-goro : goro
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>kon : kon
-kolem : kolem
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mengorbankan : korban
-dadi : dadi
-bhn : bhn
-lelucon : lelucon
-sak : sak
-jancok : jancok
-sampek : sampek
-kpn : kpn
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ayas : ayas
-gak : gak
-dukung : dukung
-umak : umak
-kabeh : kabeh
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>terusut : usut
-terkecuali : kecuali
-supporter : supporter
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>modon : modon
-lapangan : lapang
-pingpong : pingpong
-kapolresta : kapolresta
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sidoarjo : sidoarjo
-salurkan : salur
-taliasih : taliasih
-bantuan : bantu
-sepeda : sepeda
-polisi : polisi
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tragedikanjuruhan : tragedikanjuruhan
-elemen : elemen
-rusuh : rusuh
-kesalahan : salah
-udah : udah
-jatah : jatah
-pisang :
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> pisang
-sang : sang
-ok : ok
-menyalahkan : salah
-didalamnya : dalam
-teruss : teruss
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>menembakkan : tembak
-gas : gas
-beracun : racun
-hukum : hukum
-harapan : harap
-pribadi : pribadi
-klub : klub
-membantu : bantu
-tagar : tagar
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ditekan : tekan
-kenyataan : nyata
-berlanjut : lanjut
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hashtag : hashtag
-hny : hny
-nyindir : nyindir
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>berhenti : henti
-mendukungmu : dukung
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nyinyirin : nyinyirin
-tim : tim
-produksi : produksi
-aktif : aktif
-berperan : peran
-pengungkapan : ungkap
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>kombes : kombes
-pol : pol
-kusumo : sumo
-wahyu : wahyu
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bintoro : bintoro
-anggota : anggota
-ketabahan : tabah
-terulang : ulang
-sumber : sumber
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>youtube : youtube
-seputar : putar
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>inews : inews
-sorotan : sorot
-oktober : oktober
-merengut : rengut
-kemanusiaan : manusia
-peru : peru
-orang : orang
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>redsindo : redsindo
-lapisan : lapis
-kacau : kacau
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ntah : ntah
-menyelamatkan : selamat
-membuka : buka
-mata : mata
-menonton : tonton
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>yeah : yeah
-that : that
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>part : part
-killing : killing
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>people : people
-in : in
-my : my
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>country : country
-can : can
-search : search
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>google : google
-kekno : kekno
-ae : ae
-piala : piala
-ne : ne
-nang : nang
-asu : asu
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ikimandegno : ikimandegno
-pas : pas
-jangkep : jangkep
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>musimmulai : musimmulai
-musim : musim
-anyar : anyar
-manehwarah : manehwarah
-en : en
-kehormatan : hormat
-ra : ra
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>duwe : duwe
-isin : isin
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>blas : blas
-menganggap : anggap
-kematian : mati
-salah : salah
 sih : sih
+jalan : jalan
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>internet : internet
-meyangkut : meyangkut
-amp : amp
-kesehatan : sehat
-petugas : tugas
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ratingnya : ratingnya
+indosiar : indosiar
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pemilu : milu
-melebihin : melebihin
-klo : klo
-kalah : kalah
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sblm : sblm
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>season : season
-dst : dst
-haparap : haparap
-maklum : maklum
-kejelasan : jelas
-haram : haram
-liat : liat
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sblmnya : sblmnya
+masuk : masuk
+skrg : skrg
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>indo : indo
-besarnya : besar
-dampak : dampak
-dimunculkan : muncul
-kementerian : menteri
-kajian : kaji
-aksi : aksi
-strategis : strategis
-bem : bem
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>rating : rating
+susah : susah
+efek : efek
+pildun : pildun
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fisip : fisip
-ub : ub
-hadir : hadir
-pencerdasan : cerdas
-alternatif : alternatif
-kebijakan : bijak
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ngaruh : ngaruh
+gitu : gitu
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pemangku : mang
-kepentingan : penting
-menuntaskan : tuntas
-apapun : apa
-cobaan : coba
-bencana : bencana
-negeri : negeri
-ucapkan : ucap
-berbela : bela
-sungkawa : sungkawa
-rapel : rapel
-penghuni : huni
-lainya : lai
-mengawal : awal
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>onside : onside
+offside : offside
+blok : blok
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mikiro : mikiro
-ndes : ndes
-manajemen : manajemen
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>balbalanmu : balbalanmu
+taek : taek
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>owner : owner
-iso : iso
-selebrasi : selebrasi
-cengengesan : cengengesan
-kongono : kongono
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>taekan : taekan
+wis : wis
+ra : ra
+ndeleng : ndeleng
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>saiki : saiki
-disenggol : senggol
-satir : satir
-semono : mono
-koe : koe
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ngene : ngene
+iki : iki
+metu : metu
+ning : ning
+tl : tl
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bales : bales
-gowo : gowo
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>garakke : garakke
+emosi : emosi
+tok : tok
+polda : polda
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gublok : gublok
-due : due
-sisin : sisin
-fanatisme : fanatisme
-kedaerahan : daerah
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sy : sy
-uda : uda
-persebaya : baya
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>jatim : jatim
+serahkan : serah
+kejaksaan : jaksa
+enak : enak
+tonton : tonton
+eh : eh
+perubahan : ubah
+jam : jam
 main : main
-meninggalkan : tinggal
-dunia : dunia
-persuporteran : suporter
-sdh : sdh
-diluar : luar
-nalar : nalar
-gw : gw
-ntn : ntn
-lg : lg
 kualitas : kualitas
-nya : nya
-tp : tp
-sistem : sistem
-pembenahannya : benah
-lini : lini
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>jateng : jateng
-bergulir : gulir
-hasil : hasil
-pertandingannya : tanding
-didu : didu
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>taikk : taikk
+wasitmu : wasit
+ki : ki
+lo : lo
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>inna : inna
-lillahi : lillahi
-wa : wa
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>itungan : itungan
+wes : wes
+dudu : dudu
+human : human
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ilaihi : ilaihi
-rojiun : rojiun
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ellol : ellol
+kui : kui
+tolol : tolol
+namanya : nama
+gojek : gojek
+bukalapak : bukalapak
+itupun : itu
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pengen : ken
-dengar : dengar
-update : update
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pertandingan : tanding
+sibuk : sibuk
+kuliah : kuliah
+kerja : kerja
+dah : dah
+ngikutin : ngikutin
+sadar : sadar
+berjalan : jalan
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>diadili : adil
-seadilnya : adil
-sampah : sampah
-diurus : urus
-ajg : ajg
-babi : babi
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hadapin : hadapin
+perdija : perdija
+kalah : kalah
+nama : nama
+ganti : ganti
+rebahan : rebah
+menarik : tarik
+penuh : penuh
+darah : darah
+id : id
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>slanjutnya : slanjutnya
+dri : dri
+menghukum : hukum
+tsb : tsb
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>kdepannya : kdepannya
+tdk : tdk
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>trjadi : trjadi
+lg : lg
+preeettt : preeettt
+lucu : lucu
+kn : kn
+wasitnya : wasit
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pdhl : pdhl
+hukum : hukum
+wkwkwkkw : wkwkwkkw
+mpe : mpe
+kena : kena
+amnesia : amnesia
+yah : yah
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>wkwkwkw : wkwkwkw
+gada : gada
+gairah : gairah
+nntn : nntn
+stop : stop
+krn : krn
+jd : jd
+kangen : kangen
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>persija : persija
+jkt : jkt
+bagusnya : bagus
+klasemen : klasemen
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nyodok : nyodok
+papan : papan
+dilanjut : lanjut
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ngeliat : ngeliat
+nyesel : nyesel
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ngarep : ngarep
+enjoy : enjoy
+minat : minat
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mengikuti : ikut
+plottwist : plottwist
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>setting : setting
+oknum : oknum
+biar : biar
+keliatan : liat
+ancur : ancur
+tanggung : tanggung
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ndelok : ndelok
+balan : balan
+kene : kene
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>kiro : kiro
+mari : mari
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>onok : onok
+lha : lha
+sip : sip
+club : club
+dirugikan : rugi
+keras : keras
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bersuara : suara
+kejadian : jadi
+hahahaha : hahahaha
+jujur : jujur
+gue : gue
+so : so
+you : you
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>want : want
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>crying : crying
+with : with
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tragedy : tragedy
+in : in
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>itaewon : itaewon
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>korean : korean
+is : is
+country : country
+rasis : ras
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>know : know
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">KeyboardInterrupt</span>Traceback (most recent call last)
@@ -2815,18 +2118,39 @@ babi : babi
 <span class="g g-Whitespace">     </span><span class="mi">91</span>                 <span class="k">return</span>
 
 <span class="nn">/usr/local/lib/python3.8/dist-packages/Sastrawi/Stemmer/Context/Context.py</span> in <span class="ni">accept_prefix_visitors</span><span class="nt">(self, visitors)</span>
+<span class="g g-Whitespace">    </span><span class="mi">108</span>         <span class="n">removalCount</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">removals</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">109</span>         <span class="k">for</span> <span class="n">visitor</span> <span class="ow">in</span> <span class="n">visitors</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">110</span>             <span class="bp">self</span><span class="o">.</span><span class="n">accept</span><span class="p">(</span><span class="n">visitor</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">111</span>             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">dictionary</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">current_word</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">110</span>             <span class="bp">self</span><span class="o">.</span><span class="n">accept</span><span class="p">(</span><span class="n">visitor</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">111</span>             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">dictionary</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">current_word</span><span class="p">):</span>
 <span class="g g-Whitespace">    </span><span class="mi">112</span>                 <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_word</span>
-<span class="g g-Whitespace">    </span><span class="mi">113</span>             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">process_is_stopped</span><span class="p">:</span>
 
-<span class="nn">/usr/local/lib/python3.8/dist-packages/Sastrawi/Dictionary/ArrayDictionary.py</span> in <span class="ni">contains</span><span class="nt">(self, word)</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> 
-<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="k">def</span> <span class="nf">contains</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">word</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">10</span>         <span class="k">return</span> <span class="n">word</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">words</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> 
-<span class="g g-Whitespace">     </span><span class="mi">12</span>     <span class="k">def</span> <span class="nf">count</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="nn">/usr/local/lib/python3.8/dist-packages/Sastrawi/Stemmer/Context/Context.py</span> in <span class="ni">accept</span><span class="nt">(self, visitor)</span>
+<span class="g g-Whitespace">     </span><span class="mi">95</span> 
+<span class="g g-Whitespace">     </span><span class="mi">96</span>     <span class="k">def</span> <span class="nf">accept</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">visitor</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">97</span>         <span class="n">visitor</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">98</span> 
+<span class="g g-Whitespace">     </span><span class="mi">99</span>     <span class="k">def</span> <span class="nf">accept_visitors</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">visitors</span><span class="p">):</span>
+
+<span class="nn">/usr/local/lib/python3.8/dist-packages/Sastrawi/Stemmer/Context/Visitor/AbstractDisambiguatePrefixRule.py</span> in <span class="ni">visit</span><span class="nt">(self, context)</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> 
+<span class="g g-Whitespace">     </span><span class="mi">13</span>         <span class="k">for</span> <span class="n">disambiguator</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">disambiguators</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">14</span>             <span class="n">result</span> <span class="o">=</span> <span class="n">disambiguator</span><span class="o">.</span><span class="n">disambiguate</span><span class="p">(</span><span class="n">context</span><span class="o">.</span><span class="n">current_word</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span>             <span class="k">if</span> <span class="n">context</span><span class="o">.</span><span class="n">dictionary</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span>                 <span class="k">break</span>
+
+<span class="nn">/usr/local/lib/python3.8/dist-packages/Sastrawi/Morphology/Disambiguator/DisambiguatorPrefixRule32.py</span> in <span class="ni">disambiguate</span><span class="nt">(self, word)</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>         <span class="k">if</span> <span class="n">word</span> <span class="o">==</span> <span class="s1">&#39;pelajar&#39;</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span>             <span class="k">return</span> <span class="s1">&#39;ajar&#39;</span>
+<span class="ne">---&gt; </span><span class="mi">14</span>         <span class="n">matches</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^pe(l[aiueo])(.*)$&#39;</span><span class="p">,</span> <span class="n">word</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span>         <span class="k">if</span> <span class="n">matches</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span>             <span class="k">return</span> <span class="n">matches</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">matches</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="nn">/usr/lib/python3.8/re.py</span> in <span class="ni">match</span><span class="nt">(pattern, string, flags)</span>
+<span class="g g-Whitespace">    </span><span class="mi">189</span>     <span class="sd">&quot;&quot;&quot;Try to apply the pattern at the start of the string, returning</span>
+<span class="g g-Whitespace">    </span><span class="mi">190</span><span class="sd">     a Match object, or None if no match was found.&quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">191</span>     <span class="k">return</span> <span class="n">_compile</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">flags</span><span class="p">)</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">192</span> 
+<span class="g g-Whitespace">    </span><span class="mi">193</span> <span class="k">def</span> <span class="nf">fullmatch</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">string</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
@@ -5745,6 +5069,13 @@ in Networkx 3.0. Use `from_scipy_sparse_array` instead.
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title"><strong>Data crawling</strong></p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="crawling_pta.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Crawling Data</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>
